@@ -11,126 +11,126 @@
 */
 
 * html .fixed {
-	position: absolute
+    position: absolute
 }
 
 .fixed {
-	position: fixed
+    position: fixed
 }
 
 /* @group Formular */
 
 form h1 {
-	font: 15px Verdana, Arial, Helvetica, sans-serif;
-	padding: 10px 0px 20px;
-	position: relative;
-	margin: 0;
-	bottom: 15px;
+    font: 15px Verdana, Arial, Helvetica, sans-serif;
+    padding: 10px 0px 20px;
+    position: relative;
+    margin: 0;
+    bottom: 15px;
 }
 
 form div table {
-	right: 0;
-	position: relative;
-	width: 100%;
+    right: 0;
+    position: relative;
+    width: 100%;
 }
 
 div.group {
-	padding: 30px 10px;
-	border: 1px solid #805958;
-	margin-bottom: 40px;
-	position: relative;
-	background-color: #fcf7eb;
+    padding: 30px 10px;
+    border: 1px solid #805958;
+    margin-bottom: 40px;
+    position: relative;
+    background-color: #fcf7eb;
 }
 
 div.group_alone {
-	border: 1px solid maroon;
-	position: relative;
-	background-color: #f6f6f6;
-	padding-top: 20px;
-	padding-left: 10px;
+    border: 1px solid maroon;
+    position: relative;
+    background-color: #f6f6f6;
+    padding-top: 20px;
+    padding-left: 10px;
 }
 
 div.group h2, div.group_alone h2 {
-	font-weight: normal;
-	font-style: normal;
-	color: #805958;
-	margin-left: 10px;
-	background-color: #fcf7eb;
-	display: inline;
-	position: absolute;
-	float: none;
-	top: -20px;
-	padding-left: 15px;
-	padding-right: 15px;
-	border: 1px solid #805958;
-	border-bottom-style: none;
-	padding-top: 3px;
+    font-weight: normal;
+    font-style: normal;
+    color: #805958;
+    margin-left: 10px;
+    background-color: #fcf7eb;
+    display: inline;
+    position: absolute;
+    float: none;
+    top: -20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #805958;
+    border-bottom-style: none;
+    padding-top: 3px;
 }
 
 form div.kalender table {
-	float: left !important;
-	width: 1px;
-	width: 500px;
-	margin-bottom: 10px;
+    float: left !important;
+    width: 1px;
+    width: 500px;
+    margin-bottom: 10px;
 }
 
 form hr {
-	clear: both;
-	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	display: block;
-	float: left;
-	border-style: none;
-	border-bottom: 1px solid silver;
+    clear: both;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    float: left;
+    border-style: none;
+    border-bottom: 1px solid silver;
 }
 
 div.clear {
-	clear: both;
-	display: block;
+    clear: both;
+    display: block;
 }
 
 .clear {
-	clear: none;
-	float: none;
+    clear: none;
+    float: none;
 }
 
 form p {
-	clear: both;
-	display: block;
-	margin: 0px 0px 10px 0px;
+    clear: both;
+    display: block;
+    margin: 0px 0px 10px 0px;
 }
 
 form .p {
-	clear: both;
-	display: block;
-	margin: 0px 0px 10px 0px;
+    clear: both;
+    display: block;
+    margin: 0px 0px 10px 0px;
 }
 
 form p label, form label {
-	float: left !important;
-	display: block;
-	padding-right: 10px;
+    float: left !important;
+    display: block;
+    padding-right: 10px;
 }
 
 form td label {
-	padding-right: 10px;
-	margin: 0;
-	display: inline;
+    padding-right: 10px;
+    margin: 0;
+    display: inline;
 }
 
 form input {
-	padding-left: 5px;
-	margin-bottom: 5px;
-	float: right;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    float: right;
 }
 
 form textarea {
-	
+
 }
 
 form table textarea {
-	float: right;
+    float: right;
 }
 
 /* @end */
@@ -138,27 +138,27 @@ form table textarea {
 /* @group Tabellen */
 
 table {
-	border-spacing: 0px;
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
+    border-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
 }
 
 .zeile {
-	background: transparent;
+    background: transparent;
 }
 
 .zeile_aktiv {
-	background-color: #dbe4ff;
-	cursor: pointer;
+    background-color: #dbe4ff;
+    cursor: pointer;
 }
 
 .zelle {
-	background: transparent;
+    background: transparent;
 }
 
 .zelle_aktiv {
-	background-color: #dbe4ff;
+    background-color: #dbe4ff;
 }
 
 /* @end */
@@ -166,29 +166,29 @@ table {
 /* @group Standart */
 
 .field_required {
-	border: 1px solid red;
+    border: 1px solid red;
 }
 
 .left {
-	text-align: left;
-	float: left;
-	clear: none;
-	position: relative;
+    text-align: left;
+    float: left;
+    clear: none;
+    position: relative;
 }
 
 .right {
-	text-align: right;
-	float: right;
-	clear: none;
-	position: relative;
+    text-align: right;
+    float: right;
+    clear: none;
+    position: relative;
 }
 
 code {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border: 1px dotted #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px dotted #000000;
 }
 
 /* @end */
@@ -196,11 +196,11 @@ code {
 /* @group Layout */
 
 .kasten {
-	border: 1px solid silver;
-	margin: 20px 100px 20px 50px;
-	padding: 50px 20px 50px 20px;
-	width: 700px;
-	background-color: #c3d4f3;
+    border: 1px solid silver;
+    margin: 20px 100px 20px 50px;
+    padding: 50px 20px 50px 20px;
+    width: 700px;
+    background-color: #c3d4f3;
 }
 
 /* @end */
