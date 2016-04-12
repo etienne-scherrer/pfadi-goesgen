@@ -1,0 +1,145 @@
+@CHARSET "UTF-8";
+
+@import url("smoothdivscroll_mod.css");
+
+@import url("pfadiheim.css");
+
+#galerie_post_loaded_content {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+
+#galerie_post_loaded_content div.scrollableArea * {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  /* If you don't want the images in the scroller to be selectable, try the following
+    block of code. It's just a nice feature that prevent the images from
+    accidentally becoming selected/inverted when the user interacts with the scroller. */
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.content_abstand {
+  height: 50px;
+}
+
+#content_breit {
+  position: relative;
+  padding-top: 80px;
+  margin-left: 30px;
+  width: 800px;
+  background: url(../bilder/layout/weiss_90pro-trans.png) repeat;
+  padding-left: 20px;
+  padding-right: 20px;
+  top: 60px;
+}
+
+#content_bilder {
+  height: 350px;
+  background-color: black;
+  border: 3px solid black;
+}
+
+#content_beschreibung {
+  height: 50px;
+  padding-top: 15px;
+  font: 1.3em "Lucida Grande", Lucida, Verdana, sans-serif;
+  text-align: center;
+}
+
+#grundriss-bild {
+  position: absolute;
+}
+
+#content_grundriss {
+  height: 200px;
+  margin-left: 130px;
+}
+
+#content_grundriss div.raum {
+  position: absolute;
+  background-color: #830262;
+  opacity: 0.0;
+  filter: alpha(opacity = 0);
+}
+
+#content_grundriss div.raum:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity = 50);
+}
+
+#content_grundriss div.active {
+  opacity: 0.5;
+  filter: alpha(opacity = 50);
+}
+
+#grundriss-aufenthaltsraum {
+  width: 125px;
+  height: 177px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+#grundriss-schlafraum {
+  width: 283px;
+  height: 77px;
+  margin-left: 143px;
+  margin-top: 10px;
+}
+
+#grundriss-duschraum {
+  width: 54px;
+  height: 77px;
+  margin-left: 279px;
+  margin-top: 114px;
+}
+
+#grundriss-wc {
+  width: 90px;
+  height: 77px;
+  margin-left: 334px;
+  margin-top: 114px;
+}
+
+#grundriss-pfadiraum1 {
+  width: 32px;
+  height: 77px;
+  margin-left: 247px;
+  margin-top: 114px;
+}
+
+#grundriss-pfadiraum2 {
+  width: 113px;
+  height: 183px;
+  margin-left: 425px;
+  margin-top: 10px;
+}
+
+#grundriss-kueche {
+  width: 69px;
+  height: 77px;
+  margin-left: 143px;
+  margin-top: 114px;
+}
+
+#grundriss-eingang_mieter {
+  width: 34px;
+  height: 77px;
+  margin-left: 215px;
+  margin-top: 112px;
+}
+
+#grundriss-eingang_pfadi {
+  width: 34px;
+  height: 77px;
+  margin-left: 427px;
+  margin-top: 112px;
+}

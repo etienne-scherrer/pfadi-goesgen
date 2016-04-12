@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+/* galerie benoetig fancybox thumbs */
+@import url("jquery.fancybox-thumbs.css");
+
+#content {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 100px;
+  height: 100%;
+  width: 650px;
+}
+
+#galerien {
+  width: 100%;
+}
+
+.galerie_uebersicht td {
+  padding-right: 80px;
+  width: 300px;
+}
+
+.galerie_name {
+  font-size: 13px;
+}
+
+.vorschau_bild {
+  float: right;
+  clear: right;
+  margin: 3px;
+}
+
+.vorschau_bild img {
+  border: 2px solid black;
+}
+
+.anzahl_bilder {
+  color: gray;
+  font-size: 0.8em;
+}

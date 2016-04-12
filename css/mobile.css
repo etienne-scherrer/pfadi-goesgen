@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+/* icon dimensions should be 57×57 pixels */
+@viewport {
+    width: device-width;
+    zoom: 1;
+    min-zoom: 1;
+    max-zoom: 1;
+    user-zoom: fixed;
+}
+
+/* Smartphones ----------- */
+@media only screen and (max-width: 760px) {
+    #logo {
+        /* TODO rst display: none;*/
+    }
+
+    body {
+        background-image: none;
+        margin: 0 0 0 10px;
+        padding: 0;
+        -webkit-user-select: none;
+        -webkit-text-size-adjust: none;
+    }
+}
