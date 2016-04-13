@@ -15,10 +15,11 @@
 <meta name="DC.Language" content="de"/>
 <meta name="DC.Coverage" content="Goesgen"/>
 <meta name="DC.Rights" content="© 2010 Website by ApolloGraphic © all rights reserved"/>
-<meta id="viewport" name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+<meta id="viewport"
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
 <link rel="apple-touch-icon" href="/bilder/logos/logo_pfadi_goesgen_2010-trans.png"/>
-<link rel="shortcut icon" href="bilder/favicon/pfadigoesgen_32.png"/>
+<link rel="icon" href="bilder/favicon/pfadigoesgen_32.png"/>
 <script type="text/javascript" src="include_gen.js"></script>
 <style type="text/css">
     @import url("css/jquery.fancybox.css");

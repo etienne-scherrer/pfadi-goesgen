@@ -3,7 +3,7 @@ include('data/page/definitions.php');
 $activePage = 'portrait';
 ?>
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html xmlns="http://www.w3.org/1999/xhtml" manifest="cache.appcache">
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="cache.appcache" lang="de">
 <head>
     <?php include('data/page/header.php'); ?>
     <script type="text/javascript" src="js/portrait.js"></script>
