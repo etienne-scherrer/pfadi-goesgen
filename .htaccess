@@ -3,3 +3,9 @@
 # Anything after the comment above is left alone
 
 AddCharset UTF-8 .html
+
+<IfModule mod_expires.c>
+    Header set Cache-Control "public"
+    ExpiresActive on
+    ExpiresByType text/cache-manifest "access plus 0 seconds"
+</IfModule>
