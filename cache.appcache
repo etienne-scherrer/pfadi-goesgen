@@ -89,9 +89,9 @@ css/museo.css
 css/pfadiheim_rundgang.css
 css/print.css
 css/smoothdivscroll_mod.css
-galerie.html
+galerie.php
 include_gen.js
-index.html
+index.php
 js/apollomin.js
 js/fancyBox/source/helpers/jquery.fancybox-thumbs.js
 js/fancyBox/source/jquery.fancybox.pack.js
@@ -105,12 +105,13 @@ js/jquery-ui/jquery-ui-1.10.3.custom.min.js
 js/jshash-2.2/md5-min.js
 js/news.js
 js/pfadiheim.js
+js/sommerfest.js
 js/pfadiheim_rundgang.js
 js/portrait.js
-news.html
-pfadiheim.html
-pfadiheim_rundgang.html
-portrait.html
+news.php
+pfadiheim.php
+pfadiheim_rundgang.php
+portrait.php
 
 NETWORK:
 *
