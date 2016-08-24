@@ -21,6 +21,16 @@
 <link rel="apple-touch-icon" href="/bilder/logos/logo_pfadi_goesgen_2010-trans.png"/>
 <link rel="icon" href="bilder/favicon/pfadigoesgen_32.png"/>
 <script type="text/javascript" src="include_gen.js"></script>
+<script type="text/javascript">
+    var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+    $(document).keydown(function(e) {
+        kkeys.push( e.keyCode );
+        if ( kkeys.toString().indexOf( konami ) >= 0 ){
+            $(document).unbind('keydown',arguments.callee);
+            $('body').css('background-image', 'url(https://pfadi-goesgen.ch/upload/bilder/Kaempfer-Bg.jpg)');
+        }
+    });
+</script>
 <style type="text/css">
     @import url("css/jquery.fancybox.css");
     @import url("css/layout_w3c.css");
