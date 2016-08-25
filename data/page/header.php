@@ -27,7 +27,7 @@
         kkeys.push( e.keyCode );
         if ( kkeys.toString().indexOf( konami ) >= 0 ){
             $(document).unbind('keydown',arguments.callee);
-            $('body').css('background-image', 'url(https://pfadi-goesgen.ch/upload/bilder/Kaempfer-Bg.jpg)');
+            $('#logo img').attr('src', 'https://pfadi-goesgen.ch/upload/bilder/Pokeball.PNG')
         }
     });
 </script>
