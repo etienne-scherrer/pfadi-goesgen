@@ -15,11 +15,14 @@ $activePage = 'downloads';
 <div id="mitte">
     <?php include('data/page/navigation.php'); ?>
     <div id="content">
-        <div>
-            <ul>
-                <li>Laden...</li>
-            </ul>
-        </div>
+        <h1 id="title">Downloads</h1>
+        <table id="downloads">
+            <tbody>
+            <tr>
+                <td><h1>Laden...</h1></td>
+            </tr>
+            </tbody>
+        </table>
         <div class="content_abstand"><br/></div>
     </div>
     <div class="content_abstand"><br/></div>

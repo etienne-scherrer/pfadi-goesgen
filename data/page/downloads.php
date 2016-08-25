@@ -16,7 +16,7 @@ class DownloadsHandler extends AbstractFileHandler
         if ($extension) {
             $files[$fileName] = [
                 'href'  => $relativePath . $fileName,
-                'title' => ''//$fileName ; Hier koennte man einen Bezeichnung fuer ein Bild setzen. Z.B. aus den Metadaten (IPCT / XMP)
+                'title' => $fileName
             ];
         }
     }

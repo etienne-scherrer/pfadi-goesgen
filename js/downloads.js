@@ -1,4 +1,9 @@
 apollomin.local = {
+    downloadTemplate: [
+        function (data) {
+            return '<td><h2 class="download_file">' + data['title'] + '</h2><a href=' + data['href'] +'>Download</a></td>'
+        }
+    ],
     loadDownloadFiles: function() {
         $.ajax({
             url     : "data/page/downloads.php",
@@ -6,23 +11,21 @@ apollomin.local = {
         }).done(function(response) {
             if (!response['success']) {
                 console.error("Failed to get download files.", response['message']);
-            }
-            else {
+            } else {
                 var downloads = response['data'];
-                if (!downloads || downloads.lenght == 0) {
+                if (!downloads || downloads.lenght === 0) {
                     return;
                 }
-                var target = $('#downloads > tbody');
+                var target = $('#downloads').find('> tbody');
                 target.empty();
-                var trElement = null;
+                var downloadElement = null;
                 $.each(downloads, function(index, value) {
-                    trElement = $('<tr class="download_files"></tr>');
-                    var tmp   = apollomin.toHtml(apollomin.local.galerienTemplate, [value]);
-                    trElement.append(tmp + '<hr />');
+                    var template    = apollomin.toHtml(apollomin.local.downloadTemplate, [value]);
+                    downloadElement = $('<tr class="download_files"></tr>');
+                    downloadElement.append(template);
+                    target.append(downloadElement);
+                    target.append($('<hr>'));
                 });
-                if (trElement != null) {
-                    target.append(trElement);
-                }
             }
         }).fail(function(jqXHR, statusText, error) {
             console.error("Failed to get galerien: " + statusText, jqXHR);
