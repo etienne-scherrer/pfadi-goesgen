@@ -5,7 +5,7 @@ $activePage = 'index';
 <!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" manifest="cache.appcache" lang="de">
 <head>
-<?php include('data/page/header.php'); ?>
+    <?php include('data/page/header.php'); ?>
     <script type="text/javascript" src="js/index.js"></script>
     <title>Pfadi Gösgen</title>
     <style type="text/css">
@@ -20,7 +20,7 @@ $activePage = 'index';
 <body class="nihilo">
 <?php include('data/page/logo.php'); ?>
 <div id="mitte">
-<?php include('data/page/navigation.php'); ?>
+    <?php include('data/page/navigation.php'); ?>
     <table id="short_news">
         <tr>
             <td>
