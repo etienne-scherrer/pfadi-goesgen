@@ -4,6 +4,10 @@
 
 AddCharset UTF-8 .html
 
+DirectoryIndex index.php
+
+Redirect 301 /index.html /index.php
+
 <IfModule mod_expires.c>
     Header set Cache-Control "public"
     ExpiresActive on
