@@ -7,7 +7,7 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 <div id="logo">
-    <a href="index.php">
+    <a href="/">
         <img alt="" width="158" height="158" src="bilder/logos/logo_pfadi_goesgen_2010-trans.png"/>
     </a>
 </div>

@@ -90,12 +90,13 @@ css/pfadiheim_rundgang.css
 css/print.css
 css/smoothdivscroll_mod.css
 data/page/definitions.php
+data/page/downloads.php
 data/page/events.php
 data/page/footer.php
 data/page/galerie.php
 data/page/header.php
 data/page/logo.php
-# data/page/navigation.php
+data/page/navigation.php
 data/page/texts.php
 include_gen.js
 js/apollomin.js
@@ -118,4 +119,4 @@ js/sommerfest.js
 NETWORK:
 *
 
-# last modified: Wed, 25 Aug 2016 23:32
+# last modified: Wed, 25 Aug 2016 23:42
