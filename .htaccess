@@ -4,6 +4,11 @@
 
 AddCharset UTF-8 .html
 
+Options +MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
 <IfModule mod_expires.c>
     Header set Cache-Control "public"
     ExpiresActive on
