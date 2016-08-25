@@ -7,10 +7,10 @@ apollomin.local = {
           return '<a class="galerie" data-path="' + data['path'] + '" href="' + imagePath + '"><img src="' + apollomin.getThumbnailPath(imagePath) + '"/></a>';
         }
         return '';
-      }, '</div><p class="anzahl_bilder">data[count] Bilder</p></td>',
+      }, '</div><p class="anzahl_bilder">data[count] Bilder</p></td>'
   ],
 
-  loadGalerien : function() {
+  loadDownloadFiles: function() {
     $.ajax({
       url : "data/page/galerie.php",
       dataType : "json"
@@ -93,5 +93,5 @@ apollomin.local = {
 // initialize
 /* ---------------------------------------- */
 $(function() {
-  apollomin.local.loadGalerien();
+  apollomin.local.loadDownloadFiles();
 });

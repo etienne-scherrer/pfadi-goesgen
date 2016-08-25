@@ -31,8 +31,8 @@ abstract class AbstractHandler
 
         $this->db = Zend_Db::factory($config->database);
 
-        $columnMapping = array('priority' => 'priorityName', 'timestamp' => 'timestamp', 'message' => 'message');
-        $writer = new Zend_Log_Writer_Db($this->db, 'am_log', $columnMapping);
+        $columnMapping = ['priority' => 'priorityName', 'timestamp' => 'timestamp', 'message' => 'message'];
+        $writer        = new Zend_Log_Writer_Db($this->db, 'am_log', $columnMapping);
         //$writer = new Zend_Log_Writer_Stream('testlog.txt');
         $this->logger = new Zend_Log($writer);
         //$filter = new Zend_Log_Filter_Priority(Zend_Log::CRIT); //only log critical message
@@ -67,7 +67,7 @@ abstract class AbstractHandler
 
     protected function returnFailed($message = null)
     {
-        $res = new Response();
+        $res          = new Response();
         $res->success = false;
         $res->message = $message;
         $res->send();
@@ -76,9 +76,9 @@ abstract class AbstractHandler
 
     protected function returnSuccess($data, $message = null)
     {
-        $res = new Response();
+        $res          = new Response();
         $res->success = true;
-        $res->data = $data;
+        $res->data    = $data;
         $res->message = $message;
         $res->send();
         exit();

@@ -9,6 +9,7 @@ class AbstractFileHandler extends AbstractHandler
     const MAX_THUMB_WIDTH  = 150;
     const UPLOAD_DIR       = 'upload/';
     const GALERIE_DIR      = 'galerie/';
+    const DOWNLOADS_DIR    = 'downloads/';
 
     private $basePath;
 
@@ -84,14 +85,14 @@ class AbstractFileHandler extends AbstractHandler
     function createThumb($imagepath, $fname)
     {
         //get image metadata
-        $fullpath = $imagepath . $fname;
+        $fullpath      = $imagepath . $fname;
         $fullthumbpath = $imagepath . self::THUMB_DIR . $fname;
-        $size = getimagesize($fullpath);
-        $width = $size[0];
-        $height = $size[1];
+        $size          = getimagesize($fullpath);
+        $width         = $size[0];
+        $height        = $size[1];
         //compute new sizes
         $newHeight = self::MAX_THUMB_HEIGHT;
-        $newWidth = self::MAX_THUMB_WIDTH;
+        $newWidth  = self::MAX_THUMB_WIDTH;
         if ($height < $width) {
             $newHeight = floor($height * $newWidth / $width);
         } else {
@@ -99,23 +100,23 @@ class AbstractFileHandler extends AbstractHandler
         }
 
         if ($width > $newWidth && $height > $newHeight) {
-            $img = null;
+            $img    = null;
             $newImg = null;
             if ($size[2] == 1) {
                 // GIF
-                $img = imagecreatefromgif($fullpath);
+                $img    = imagecreatefromgif($fullpath);
                 $newImg = imagecreate($newWidth, $newHeight);
                 imagecopyresampled($newImg, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
                 imagegif($newImg, $fullthumbpath);
             } else if ($size[2] == 2) {
                 // JPG
-                $img = imagecreatefromjpeg($fullpath);
+                $img    = imagecreatefromjpeg($fullpath);
                 $newImg = imagecreatetruecolor($newWidth, $newHeight);
                 imagecopyresampled($newImg, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
                 imagejpeg($newImg, $fullthumbpath);
             } else if ($size[2] == 3) {
                 // PNG
-                $img = imagecreatefrompng($fullpath);
+                $img    = imagecreatefrompng($fullpath);
                 $newImg = imagecreatetruecolor($newWidth, $newHeight);
                 imagecopyresampled($newImg, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
                 imagepng($newImg, $fullthumbpath);
@@ -137,38 +138,38 @@ class AbstractFileHandler extends AbstractHandler
 
     function getIconClass($extension)
     {
-        $result = 'filebrowser-icon-unknown-file';
-        $iconClasses = array(
-            '7z' => 'filebrowser-icon-archive-file',
-            'aac' => 'filebrowser-icon-audio-file',
-            'ai' => 'filebrowser-icon-vector-file',
-            'avi' => 'filebrowser-icon-video-file',
-            'bmp' => 'filebrowser-icon-image-file',
+        $result      = 'filebrowser-icon-unknown-file';
+        $iconClasses = [
+            '7z'   => 'filebrowser-icon-archive-file',
+            'aac'  => 'filebrowser-icon-audio-file',
+            'ai'   => 'filebrowser-icon-vector-file',
+            'avi'  => 'filebrowser-icon-video-file',
+            'bmp'  => 'filebrowser-icon-image-file',
             'divx' => 'filebrowser-icon-video-file',
-            'doc' => 'filebrowser-icon-document-file',
-            'eps' => 'filebrowser-icon-vector-file',
+            'doc'  => 'filebrowser-icon-document-file',
+            'eps'  => 'filebrowser-icon-vector-file',
             'flac' => 'filebrowser-icon-audio-file',
-            'flv' => 'filebrowser-icon-video-file',
-            'gif' => 'filebrowser-icon-image-file',
-            'jpg' => 'filebrowser-icon-image-file',
-            'mov' => 'filebrowser-icon-video-file',
-            'mp3' => 'filebrowser-icon-audio-file',
-            'mpg' => 'filebrowser-icon-video-file',
-            'pdf' => 'filebrowser-icon-acrobat-file',
-            'png' => 'filebrowser-icon-image-file',
-            'pps' => 'filebrowser-icon-presentation-file',
-            'ppt' => 'filebrowser-icon-presentation-file',
-            'rar' => 'filebrowser-icon-archive-file',
-            'psd' => 'filebrowser-icon-image-file',
-            'svg' => 'filebrowser-icon-vector-file',
-            'swf' => 'filebrowser-icon-flash-file',
-            'tif' => 'filebrowser-icon-image-file',
-            'txt' => 'filebrowser-icon-text-file',
-            'wav' => 'filebrowser-icon-audio-file',
-            'wma' => 'filebrowser-icon-video-file',
-            'xls' => 'filebrowser-icon-spreadsheet-file',
-            'zip' => 'filebrowser-icon-archive-file'
-        );
+            'flv'  => 'filebrowser-icon-video-file',
+            'gif'  => 'filebrowser-icon-image-file',
+            'jpg'  => 'filebrowser-icon-image-file',
+            'mov'  => 'filebrowser-icon-video-file',
+            'mp3'  => 'filebrowser-icon-audio-file',
+            'mpg'  => 'filebrowser-icon-video-file',
+            'pdf'  => 'filebrowser-icon-acrobat-file',
+            'png'  => 'filebrowser-icon-image-file',
+            'pps'  => 'filebrowser-icon-presentation-file',
+            'ppt'  => 'filebrowser-icon-presentation-file',
+            'rar'  => 'filebrowser-icon-archive-file',
+            'psd'  => 'filebrowser-icon-image-file',
+            'svg'  => 'filebrowser-icon-vector-file',
+            'swf'  => 'filebrowser-icon-flash-file',
+            'tif'  => 'filebrowser-icon-image-file',
+            'txt'  => 'filebrowser-icon-text-file',
+            'wav'  => 'filebrowser-icon-audio-file',
+            'wma'  => 'filebrowser-icon-video-file',
+            'xls'  => 'filebrowser-icon-spreadsheet-file',
+            'zip'  => 'filebrowser-icon-archive-file'
+        ];
         if (array_key_exists($extension, $iconClasses)) {
             $result = $iconClasses[$extension];
         }
@@ -177,30 +178,30 @@ class AbstractFileHandler extends AbstractHandler
 
     function getImageMetadata()
     {
-        $picinfo = array();
+        $picinfo = [];
         getimagesize('lighthouse_spain.jpg', $picinfo);
         if (isset($picinfo['APP13'])) {
             $iptc = iptcparse($picinfo["APP13"]);
             if (is_array($iptc)) {
                 $description = $iptc['2#105'][0];
-                $time = $iptc['2#055'][0];
-                $year = substr($time, 0, 4);
-                $month = substr($time, 4, 2);
-                $day = substr($time, -2);
-                $datetaken = date('l F jS Y', mktime(0, 0, 0, $month, $day, $year));
-                $city = $iptc["2#090"][0];
-                $country = $iptc["2#101"][0];
-                $creator = $iptc["2#080"][0];
+                $time        = $iptc['2#055'][0];
+                $year        = substr($time, 0, 4);
+                $month       = substr($time, 4, 2);
+                $day         = substr($time, -2);
+                $datetaken   = date('l F jS Y', mktime(0, 0, 0, $month, $day, $year));
+                $city        = $iptc["2#090"][0];
+                $country     = $iptc["2#101"][0];
+                $creator     = $iptc["2#080"][0];
             }
         }
 
         //XMP
-        $content = file_get_contents($image);
+        $content        = file_get_contents($image);
         $xmp_data_start = strpos($content, '<x:xmpmeta');
-        $xmp_data_end = strpos($content, '</x:xmpmeta>');
-        $xmp_length = $xmp_data_end - $xmp_data_start;
-        $xmp_data = substr($content, $xmp_data_start, $xmp_length + 12);
-        $xmp = simplexml_load_string($xmp_data);
+        $xmp_data_end   = strpos($content, '</x:xmpmeta>');
+        $xmp_length     = $xmp_data_end - $xmp_data_start;
+        $xmp_data       = substr($content, $xmp_data_start, $xmp_length + 12);
+        $xmp            = simplexml_load_string($xmp_data);
     }
 
     function getXmpData($filename, $chunkSize)
@@ -209,38 +210,38 @@ class AbstractFileHandler extends AbstractHandler
             throw new RuntimeException('Expected integer value for argument #2 (chunk_size)');
         }
 
-        if (($file_pointer = fopen($filename, 'r')) === FALSE) {
+        if (($file_pointer = fopen($filename, 'r')) === false) {
             throw new RuntimeException('Could not open file for reading');
         }
 
         $startTag = '<x:xmpmeta';
-        $endTag = '</x:xmpmeta>';
-        $buffer = NULL;
-        $hasXmp = FALSE;
+        $endTag   = '</x:xmpmeta>';
+        $buffer   = null;
+        $hasXmp   = false;
 
-        while (($chunk = fread($file_pointer, $chunkSize)) !== FALSE) {
+        while (($chunk = fread($file_pointer, $chunkSize)) !== false) {
             if ($chunk === "") {
                 break;
             }
 
             $buffer .= $chunk;
             $startPosition = strpos($buffer, $startTag);
-            $endPosition = strpos($buffer, $endTag);
+            $endPosition   = strpos($buffer, $endTag);
 
-            if ($startPosition !== FALSE && $endPosition !== FALSE) {
+            if ($startPosition !== false && $endPosition !== false) {
                 $buffer = substr($buffer, $startPosition, $endPosition - $startPosition + 12);
-                $hasXmp = TRUE;
+                $hasXmp = true;
                 break;
-            } elseif ($startPosition !== FALSE) {
+            } elseif ($startPosition !== false) {
                 $buffer = substr($buffer, $startPosition);
-                $hasXmp = TRUE;
+                $hasXmp = true;
             } elseif (strlen($buffer) > (strlen($startTag) * 2)) {
                 $buffer = substr($buffer, strlen($startTag));
             }
         }
 
         fclose($file_pointer);
-        return ($hasXmp) ? $buffer : NULL;
+        return ($hasXmp) ? $buffer : null;
     }
 
     function isIgnoredFileItem($item)
@@ -254,7 +255,7 @@ class AbstractFileHandler extends AbstractHandler
     {
         $browsePath = $this->getBasePath() . $relativePath;
 
-        $files = array();
+        $files    = [];
         $iterator = new DirectoryIterator($browsePath);
         foreach ($iterator as $item) {
             if (!$this->isIgnoredFileItem($item)) {
@@ -275,36 +276,36 @@ class AbstractFileHandler extends AbstractHandler
 
     protected function addFileToResult(&$files, $browsePath, $relativePath, $item, $onlyImages)
     {
-        $fname = (string)$item;
-        $ext = strtolower(pathinfo($item->getFilename(), PATHINFO_EXTENSION));
+        $fname        = (string)$item;
+        $ext          = strtolower(pathinfo($item->getFilename(), PATHINFO_EXTENSION));
         $hasThumbnail = $this->checkThumbnail($browsePath, $fname, $ext);
         if (!$onlyImages || $hasThumbnail) {
-            $files[$fname] = array(
-                'path' => $relativePath . $fname,
-                'text' => $fname,
-                'leaf' => $item->isFile(),
-                'size' => $item->getSize(),
-                'iconCls' => $this->getIconClass($ext),
-                'extension' => $ext,
+            $files[$fname] = [
+                'path'          => $relativePath . $fname,
+                'text'          => $fname,
+                'leaf'          => $item->isFile(),
+                'size'          => $item->getSize(),
+                'iconCls'       => $this->getIconClass($ext),
+                'extension'     => $ext,
                 'date_modified' => $item->getMTime(),
                 'has_thumbnail' => $hasThumbnail
-            );
+            ];
         }
     }
 
     protected function addFolderToResult(&$files, $relativePath, $item)
     {
-        $fname = (string)$item;
-        $files[$fname] = array(
-            'path' => $relativePath . $fname . '/',
-            'text' => $fname,
-            'leaf' => false,
-            'size' => null,
-            'iconCls' => null,
-            'extension' => null,
+        $fname         = (string)$item;
+        $files[$fname] = [
+            'path'          => $relativePath . $fname . '/',
+            'text'          => $fname,
+            'leaf'          => false,
+            'size'          => null,
+            'iconCls'       => null,
+            'extension'     => null,
             'date_modified' => $item->getMTime(),
             'has_thumbnail' => false
-        );
+        ];
     }
 }
 

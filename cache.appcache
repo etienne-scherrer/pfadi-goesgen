@@ -56,21 +56,21 @@ css/fancybox_loading@2x.gif
 css/fancybox_overlay.png
 css/fancybox_sprite.png
 css/fancybox_sprite@2x.png
-css/fonts/Museo300-Regular.otf
-css/fonts/Museo500-Regular.otf
-css/fonts/Museo700-Regular.otf
 css/fonts/museo300-regular-webfont.eot
 css/fonts/museo300-regular-webfont.svg
 css/fonts/museo300-regular-webfont.ttf
 css/fonts/museo300-regular-webfont.woff
+css/fonts/Museo300-Regular.otf
 css/fonts/museo500-regular-webfont.eot
 css/fonts/museo500-regular-webfont.svg
 css/fonts/museo500-regular-webfont.ttf
 css/fonts/museo500-regular-webfont.woff
+css/fonts/Museo500-Regular.otf
 css/fonts/museo700-regular-webfont.eot
 css/fonts/museo700-regular-webfont.svg
 css/fonts/museo700-regular-webfont.ttf
 css/fonts/museo700-regular-webfont.woff
+css/fonts/Museo700-Regular.otf
 css/galerie.css
 css/images/blank.gif
 css/images/loading.gif
@@ -89,6 +89,14 @@ css/museo.css
 css/pfadiheim_rundgang.css
 css/print.css
 css/smoothdivscroll_mod.css
+data/page/definitions.php
+data/page/events.php
+data/page/footer.php
+data/page/galerie.php
+data/page/header.php
+data/page/logo.php
+# data/page/navigation.php
+data/page/texts.php
 include_gen.js
 js/apollomin.js
 js/fancyBox/source/helpers/jquery.fancybox-thumbs.js
@@ -103,19 +111,11 @@ js/jquery-ui/jquery-ui-1.10.3.custom.min.js
 js/jshash-2.2/md5-min.js
 js/news.js
 js/pfadiheim.js
-js/sommerfest.js
 js/pfadiheim_rundgang.js
 js/portrait.js
-data/page/definitions.php
-data/page/events.php
-data/page/footer.php
-data/page/galerie.php
-data/page/header.php
-data/page/logo.php
-data/page/navigation.php
-data/page/texts.php
+js/sommerfest.js
 
 NETWORK:
 *
 
-# last modified: Wed, 25 Aug 2016 15:19
+# last modified: Wed, 25 Aug 2016 16:42

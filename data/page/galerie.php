@@ -23,15 +23,15 @@ class GalerieHandler extends AbstractFileHandler
     protected function addFileToResult(&$files, $browsePath, $relativePath, $item, $onlyImages)
     {
         if (!$this->isModeGalerien()) {
-            $fname = (string)$item;
-            $ext = strtolower(pathinfo($item->getFilename(), PATHINFO_EXTENSION));
+            $fname        = (string)$item;
+            $ext          = strtolower(pathinfo($item->getFilename(), PATHINFO_EXTENSION));
             $hasThumbnail = $this->checkThumbnail($browsePath, $fname, $ext);
             if (!$onlyImages || $hasThumbnail) {
                 if ($ext)
-                    $files[$fname] = array(
-                        'href' => $relativePath . $fname,
+                    $files[$fname] = [
+                        'href'  => $relativePath . $fname,
                         'title' => ''//$fname ; Hier koennte man einen Bezeichnung fuer ein Bild setzen. Z.B. aus den Metadaten (IPCT / XMP)
-                    );
+                    ];
             }
         }
     }
@@ -39,16 +39,16 @@ class GalerieHandler extends AbstractFileHandler
     protected function addFolderToResult(&$files, $relativePath, $item)
     {
         if ($this->isModeGalerien()) {
-            $filename = $item->getFilename();
-            $path = $relativePath . $filename . '/';
+            $filename        = $item->getFilename();
+            $path            = $relativePath . $filename . '/';
             $innerBrowsePath = $this->getBasePath() . $path;
-            $headImgName = null;
-            $count = 0;
-            $iterator = new DirectoryIterator($innerBrowsePath);
+            $headImgName     = null;
+            $count           = 0;
+            $iterator        = new DirectoryIterator($innerBrowsePath);
             foreach ($iterator as $innerItem) {
                 if (!$this->isIgnoredFileItem($innerItem) && $innerItem->isFile()) {
-                    $innerfname = $innerItem->getFilename();
-                    $ext = strtolower(pathinfo($innerfname, PATHINFO_EXTENSION));
+                    $innerfname   = $innerItem->getFilename();
+                    $ext          = strtolower(pathinfo($innerfname, PATHINFO_EXTENSION));
                     $hasThumbnail = $this->checkThumbnail($innerBrowsePath, $innerfname, $ext);
                     if ($hasThumbnail) {
                         $count = $count + 1;
@@ -64,12 +64,12 @@ class GalerieHandler extends AbstractFileHandler
             if ($matches && count($matches) > 0) {
                 $sortstring = $matches[0] . $filename;
             }
-            $files[$sortstring] = array(
-                'path' => $path,
-                'name' => $filename,
-                'count' => $count,
+            $files[$sortstring] = [
+                'path'     => $path,
+                'name'     => $filename,
+                'count'    => $count,
                 'head_img' => $path . $headImgName
-            );
+            ];
         }
     }
 
