@@ -52,6 +52,7 @@ bilder/pfadiheim_zustand/image.jpeg
 bilder/symbole/pdf.gif
 bilder/symbole/pdf.png
 css/blank.gif
+css/download.css
 css/fancybox_loading.gif
 css/fancybox_loading@2x.gif
 css/fancybox_overlay.png
@@ -91,7 +92,7 @@ css/pfadiheim_rundgang.css
 css/print.css
 css/smoothdivscroll_mod.css
 data/page/definitions.php
-data/page/downloads.php
+data/page/download.php
 data/page/events.php
 data/page/footer.php
 data/page/galerie.php
@@ -101,6 +102,7 @@ data/page/navigation.php
 data/page/texts.php
 include_gen.js
 js/apollomin.js
+js/download.js
 js/fancyBox/source/helpers/jquery.fancybox-thumbs.js
 js/fancyBox/source/jquery.fancybox.pack.js
 js/galerie.js
@@ -120,4 +122,4 @@ js/sommerfest.js
 NETWORK:
 *
 
-# last modified: Wed, 25 Aug 2016 23:42
+# last modified: Wed, 26 Aug 2016 14:51

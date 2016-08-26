@@ -5,9 +5,9 @@
             <li id="navigation-news" class="<?= $activePage === 'news' ? 'active' : 'inactive' ?>">
                 <a title="News" href="news"><span>News</span></a>
             </li>
-           <!-- <li id="navigation-downloads" class="<?= $activePage === 'downloads' ? 'active' : 'inactive' ?>">
-                <a title="Downloads" href="downloads"><span>Downloads</span></a>
-            </li> -->
+            <li id="navigation-downloads" class="<?= $activePage === 'download' ? 'active' : 'inactive' ?>">
+                <a title="Download" href="download"><span>Download</span></a>
+            </li>
             <li id="navigation-portrait" class="<?= $activePage === 'portrait' ? 'active' : 'inactive' ?>">
                 <a title="Portrait" href="portrait"><span>Portrait</span></a>
             </li>

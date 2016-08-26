@@ -1,13 +1,13 @@
 <?php
 include('data/page/definitions.php');
-$activePage = 'downloads';
+$activePage = 'download';
 ?>
 <!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" manifest="cache.appcache" lang="de">
 <head>
     <?php include('data/page/header.php'); ?>
-    <script type="text/javascript" src="js/downloads.js"></script>
-    <style type="text/css">@import url("css/downloads.css");</style>
+    <script type="text/javascript" src="js/download.js"></script>
+    <style type="text/css">@import url("css/download.css");</style>
     <title>Pfadi Gösgen :: Downloads</title>
 </head>
 <body class="nihilo">

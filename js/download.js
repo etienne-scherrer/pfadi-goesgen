@@ -6,7 +6,7 @@ apollomin.local = {
     ],
     loadDownloadFiles: function() {
         $.ajax({
-            url     : "data/page/downloads.php",
+            url     : "data/page/download.php",
             dataType: "json"
         }).done(function(response) {
             if (!response['success']) {
