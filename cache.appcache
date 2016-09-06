@@ -3,6 +3,15 @@ CACHE MANIFEST
 # Creation Time 29.06.2014 14:09:05
 
 CACHE:
+apollomin/all-classes.js
+apollomin/all-login-classes.js
+apollomin/common.js
+apollomin/resources/am-all.css
+apollomin/resources/am-example.css
+apollomin/resources/apollographic_32.png
+apollomin/resources/apollomin.jpg
+apollomin/resources/css/app.css
+apollomin/resources/loginscreen.jpg
 bilder/background/bg-1.jpg
 bilder/background/bg-10.jpg
 bilder/background/bg-11.jpg
@@ -51,6 +60,7 @@ bilder/pfadiheim_zustand/image-7.jpeg
 bilder/pfadiheim_zustand/image.jpeg
 bilder/symbole/pdf.gif
 bilder/symbole/pdf.png
+css/apollomin-lite.css
 css/blank.gif
 css/download.css
 css/fancybox_loading.gif
@@ -101,6 +111,7 @@ data/page/logo.php
 data/page/navigation.php
 data/page/texts.php
 include_gen.js
+index.php
 js/apollomin.js
 js/download.js
 js/fancyBox/source/helpers/jquery.fancybox-thumbs.js
@@ -122,4 +133,4 @@ js/sommerfest.js
 NETWORK:
 *
 
-# last modified: Wed, 26 Aug 2016 14:51
+# last modified: 06.09.2016 - 13:15

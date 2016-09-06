@@ -1,7 +1,3 @@
-
-#@__HCP_END__@#
-# Anything after the comment above is left alone
-
 AddCharset UTF-8 .html
 
 Options +MultiViews
@@ -9,8 +5,5 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
-<IfModule mod_expires.c>
-    Header set Cache-Control "public"
-    ExpiresActive on
-    ExpiresByType text/cache-manifest "access plus 0 seconds"
-</IfModule>
+#@__HCP_END__@#
+# Anything after the comment above is left alone
