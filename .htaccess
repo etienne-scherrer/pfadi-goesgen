@@ -1,5 +1,7 @@
 AddCharset UTF-8 .html
 
+DirectoryIndex index.php index.html
+
 Options +MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
