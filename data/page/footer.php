@@ -1,7 +1,7 @@
 <?php ?>
 <div id="fuss">
     <div>
-        <a href="index.php">HOME</a>|<a href="apollomin/">LOGIN</a>| ©2016 Pfadi Gösgen | Apollographic |
+        <a href="/">HOME</a> | <a href="apollomin/login">LOGIN</a> | ©2016 Pfadi Gösgen | Apollographic |
         <div id="fb-wrapper">
             <div class="fb-like"
                  data-href="https://www.facebook.com/pfadi.goesgen"

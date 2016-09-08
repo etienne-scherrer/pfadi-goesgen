@@ -1,4 +1,4 @@
-AddCharset UTF-8 .html
+AddDefaultCharset utf-8
 
 DirectoryIndex index.php index.html
 
@@ -6,6 +6,3 @@ Options +MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
-
-#@__HCP_END__@#
-# Anything after the comment above is left alone
