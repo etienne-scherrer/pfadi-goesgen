@@ -14,7 +14,7 @@ class LocalEventsHandler extends AbstractHandler
     {
         $stmt = $this->db->query(
             'SELECT * FROM am_text AS t JOIN am_event AS e ON t.text_nr = e.text_nr WHERE t.type_uid=? AND DATE_ADD(e.evt_end,INTERVAL 1 DAY) >= NOW() ORDER BY e.evt_start LIMIT 1',
-            [$_GET["typeUid"]]
+            [!empty($_GET["typeUid"]) ? $_GET["typeUid"] : null]
         );
 
         $fetcher = new Zend_Db_Statement_Mysqli_Datemodifier($stmt, $this->getDateColumns());
@@ -25,4 +25,3 @@ class LocalEventsHandler extends AbstractHandler
 
 $handler = new LocalEventsHandler();
 $handler->handle();
-?>

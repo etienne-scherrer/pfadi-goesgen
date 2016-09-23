@@ -1,0 +1,19 @@
+#short_news {
+    position: relative;
+    top: 200px;
+    left: -80px;
+    border-spacing: 40px;
+    float: left;
+}
+
+#short_infos {
+    position: relative;
+    top: 200px;
+    border-spacing: 40px;
+    float: right;
+}
+
+#short_infos table {
+    border-spacing: 1rem;
+    border-collapse: separate;
+}

@@ -14,7 +14,7 @@ class LocalTextsHandler extends AbstractHandler
     {
         $stmt = $this->db->query(
             'SELECT * FROM am_text AS t WHERE t.type_uid=? ORDER BY t.evt_create DESC',
-            [$_GET["typeUid"]]
+            [!empty($_GET["typeUid"]) ? $_GET["typeUid"] : null]
         );
 
         $fetcher = new Zend_Db_Statement_Mysqli_Datemodifier($stmt, $this->getDateColumns());
@@ -25,4 +25,3 @@ class LocalTextsHandler extends AbstractHandler
 
 $handler = new LocalTextsHandler();
 $handler->handle();
-?>

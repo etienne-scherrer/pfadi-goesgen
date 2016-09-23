@@ -11,17 +11,18 @@ apollomin.local = {
 /* ---------------------------------------- */
 // initialize
 /* ---------------------------------------- */
-$(function () {
+$(function() {
     apollomin.loadAnschlag(104, '#woelfe');
     apollomin.loadAnschlag(105, '#pfadi');
     apollomin.loadAnschlag(106, '#biber');
+    apollomin.loadAnschlag(107, '#pios');
     apollomin.loadText(102, $('#content > div > ul'), apollomin.local.newsTemplate);
-    $("#info_kasten_pfadi").draggable({
-        opacity: 0.45,
-        cursor: "hand"
-    });
-    $("#info_kasten_woelfe").draggable({
-        opacity: 0.45,
-        cursor: "hand"
-    });
+    // $("#info_kasten_pfadi").draggable({
+    //     opacity: 0.45,
+    //     cursor: "hand"
+    // });
+    // $("#info_kasten_woelfe").draggable({
+    //     opacity: 0.45,
+    //     cursor: "hand"
+    // });
 });

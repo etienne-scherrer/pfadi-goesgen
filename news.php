@@ -24,9 +24,8 @@ $activePage = 'news';
     <table id="short_news">
         <tr>
             <td>
-                <div id="info_kasten_pfadi" class="info_kasten"><!--  Pfadi --><h1
-                        ondblclick="$('#pfadi').toggle('blind', null, 500 );">Pfadi</h1>
-
+                <div id="info_kasten_pfadi" class="info_kasten"><!--  Pfadi -->
+                    <h1>Pfadi</h1>
                     <div id="pfadi">
                         <ul>
                             <li class="pointer">
@@ -39,9 +38,8 @@ $activePage = 'news';
         </tr>
         <tr>
             <td>
-                <div id="info_kasten_woelfe" class="info_kasten"><!--  Woelfe --><h1
-                        ondblclick="$('#woelfe').toggle('blind', null, 500 );">Wölfe</h1>
-
+                <div id="info_kasten_woelfe" class="info_kasten"><!--  Woelfe -->
+                    <h1>Wölfe</h1>
                     <div id="woelfe">
                         <ul>
                             <li class="pointer">
@@ -54,10 +52,23 @@ $activePage = 'news';
         </tr>
         <tr>
             <td>
-                <div id="info_kasten_biber" class="info_kasten"><!--  Biber --><h1
-                        ondblclick="$('#biber').toggle('blind', null, 500 );">Biber</h1>
-
+                <div id="info_kasten_biber" class="info_kasten"><!--  Biber -->
+                    <h1>Biber</h1>
                     <div id="biber">
+                        <ul>
+                            <li class="pointer">
+                                <div><p>Laden...</p></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="info_kasten_pios" class="info_kasten"><!--  Pios -->
+                    <h1>Pios</h1>
+                    <div id="pios">
                         <ul>
                             <li class="pointer">
                                 <div><p>Laden...</p></div>
