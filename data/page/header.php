@@ -14,7 +14,7 @@
 <meta name="DC.Identifier" content="http://www.pfadi-goesgen.ch/news"/>
 <meta name="DC.Language" content="de"/>
 <meta name="DC.Coverage" content="Goesgen"/>
-<meta name="DC.Rights" content="© 2016 Website by ApolloGraphic © all rights reserved"/>
+<meta name="DC.Rights" content="© <?php echo date('Y') ?> Website by ApolloGraphic © all rights reserved"/>
 <meta id="viewport"
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
