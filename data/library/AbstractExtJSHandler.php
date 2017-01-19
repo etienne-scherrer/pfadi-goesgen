@@ -118,11 +118,17 @@ abstract class AbstractExtJSHandler extends AbstractHandler
         $this->returnSuccess($result, "Data loaded");
     }
 
+    /**
+     * @param Zend_Db_Select $select
+     */
     protected function createReadFrom($select)
     {
         $select->from($this->getConfiguredTableName());
     }
 
+    /**
+     * @param Zend_Db_Select $select
+     */
     protected function createReadLimit($select)
     {
         //FIXME rst does not work properly with ext js paging...
@@ -131,6 +137,9 @@ abstract class AbstractExtJSHandler extends AbstractHandler
         //}
     }
 
+    /**
+     * @param Zend_Db_Select $select
+     */
     protected function createReadWhere($select)
     {
         if (!isset($_GET['filter'])) {
@@ -145,6 +154,9 @@ abstract class AbstractExtJSHandler extends AbstractHandler
         }
     }
 
+    /**
+     * @param Zend_Db_Select $select
+     */
     protected function createReadSort($select)
     {
         if (!isset($_GET['sort'])) {
