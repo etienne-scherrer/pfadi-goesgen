@@ -63,9 +63,8 @@ class EventsHandler extends AbstractExtJSHandler
     public function handleCreateRequest($request)
     {
         $db = $this->db;
-        //create texts part
-        //create new text id and set it
-        $request->data['text_nr'] = $db->fetchOne('SELECT am_nextval()');
+        unset($request->data['text_nr']);
+
         //insert text data
         $db->insert('am_text', array_intersect_key($request->data, $this->textDbTableColumns));
 
@@ -103,5 +102,3 @@ class EventsHandler extends AbstractExtJSHandler
 
 $handler = new EventsHandler();
 $handler->handle();
-
-?>

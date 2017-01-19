@@ -21175,7 +21175,7 @@ Ext.define("am.view.Viewport", {
                 listeners: {
                     render: function(a) {
                         a.header.on("click", function() {
-                            window.location = "login.html"
+                            window.location = "login"
                         })
                     }
                 }
@@ -21211,7 +21211,7 @@ Ext.define("am.Application", {
     launch     : function() {
         Ext.Ajax.on("requestexception", function(c, a, b) {
             if (a.status === 401 || a.status === 403) {
-                window.location = "login.html"
+                window.location = "login"
             } else {
                 if (request.aborted) {
                 } else {

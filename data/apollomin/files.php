@@ -234,4 +234,3 @@ class FilesHandler extends AbstractFileHandler
 
 $handler = new FilesHandler();
 $handler->handle();
-?>

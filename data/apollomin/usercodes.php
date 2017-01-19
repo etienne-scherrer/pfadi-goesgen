@@ -27,5 +27,3 @@ class UserCodesHandler extends AbstractExtJSHandler
 
 $handler = new UserCodesHandler();
 $handler->handle();
-
-?>

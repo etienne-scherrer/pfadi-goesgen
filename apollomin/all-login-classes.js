@@ -633,7 +633,7 @@ Ext.require(["Ext.tip.QuickTipManager", "Ext.panel.Tool", "Ext.form.Panel", "Ext
             submitResponse: function() {
                 if (am.login.challenge) {
                     a.down("form").getForm().submit({
-                        method    : "POST", waitTitle: "Connecting", waitMsg: "Sending data...", params: {response: hex_md5(am.login.challenge + hex_md5(Ext.getCmp("password").getValue()))}, success: function() {
+                        method    : "POST", waitTitle: "Connecting", waitMsg: "Sending data...", params: {response: hex_md5(Ext.getCmp('password').getValue())}, success: function() {
                             Ext.util.Cookies.set("username", Ext.getCmp("username").getValue());
                             window.location = "index"
                         }, failure: function(b, c) {

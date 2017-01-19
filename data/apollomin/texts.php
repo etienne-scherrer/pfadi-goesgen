@@ -31,5 +31,3 @@ class TextsHandler extends AbstractExtJSHandler
 
 $handler = new TextsHandler();
 $handler->handle();
-
-?>

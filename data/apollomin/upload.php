@@ -105,4 +105,3 @@ class UploadHandler extends AbstractFileHandler
 
 $handler = new UploadHandler();
 $handler->handle();
-?>
