@@ -76,7 +76,7 @@ abstract class AbstractExtJSHandler extends AbstractHandler
         $idName    = $this->getConfiguredIdColumn();
         $id        = $data[$idName];
         $amount    = $amount + $this->db->update($tableName, $data, [$idName . ' = ?' => $id]);
-        if ($amount == 0) {
+        if ($amount === 0) {
             $this->returnFailed("No records were updated. Record with id " . $id . " in " . $tableName . " not found.");
         } else {
             $this->returnSuccess($this->getRecord($id), $amount . " records updated");
@@ -88,8 +88,8 @@ abstract class AbstractExtJSHandler extends AbstractHandler
         $tableName = $this->getConfiguredTableName();
         $idName    = $this->getConfiguredIdColumn();
         $id        = $request->data[$idName];
-        $amount    = $this->db->delete($tableName, [$idName . ' = ?' => $id]);
-        if ($amount == 0) {
+        $amount    = $this->db->update($tableName, ['deleted' => 1], [$idName . ' = ?' => $id]);
+        if ($amount === 0) {
             $this->returnFailed("No records were deleted. Record with id " . $id . " in " . $tableName . " not found.");
         } else {
             $this->returnSuccess(null, $amount . " records deleted");

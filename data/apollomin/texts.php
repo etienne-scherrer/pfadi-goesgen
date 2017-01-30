@@ -27,6 +27,11 @@ class TextsHandler extends AbstractExtJSHandler
         $data['user_nr'] = $_SESSION['user_nr'];
         return $data;
     }
+
+    protected function createReadFrom($select)
+    {
+        $select->from(['t' => 'am_text'])->where('t.deleted = ?', 0);
+    }
 }
 
 $handler = new TextsHandler();

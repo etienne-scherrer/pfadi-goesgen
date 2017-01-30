@@ -44,7 +44,7 @@ abstract class AbstractHandler
 
     public function isAuthenticated()
     {
-        return isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == "yes";
+        return isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === "yes";
     }
 
     public function checkAccess()

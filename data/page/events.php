@@ -12,10 +12,16 @@ class LocalEventsHandler extends AbstractHandler
 
     protected function execHandle()
     {
-        $stmt = $this->db->query(
-            'SELECT * FROM am_text AS t JOIN am_event AS e ON t.text_nr = e.text_nr WHERE t.type_uid=? AND DATE_ADD(e.evt_end,INTERVAL 1 DAY) >= NOW() ORDER BY e.evt_start LIMIT 1',
-            [!empty($_GET["typeUid"]) ? $_GET["typeUid"] : null]
-        );
+        $select = $this->db->select()
+            ->from(['t' => 'am_text'])
+            ->join(['e' => 'am_event'], 't.text_nr = e.text_nr')
+            ->where('t.type_uid = ?', !empty($_GET['typeUid']) ? $_GET['typeUid'] : null)
+            ->where('DATE_ADD(e.evt_end, INTERVAL 1 DAY) >= NOW()')
+            ->where('t.deleted = ?', 0)
+            ->where('e.deleted = ?', 0)
+            ->order('e.evt_start')
+            ->limit(1);
+        $stmt   = $select->query();
 
         $fetcher = new Zend_Db_Statement_Mysqli_Datemodifier($stmt, $this->getDateColumns());
         $result  = $fetcher->fetchAllWithDateModified();

@@ -50,6 +50,7 @@ class EventsHandler extends AbstractExtJSHandler
 
     protected function execUpdateDataBeforeCreate($data)
     {
+        $data['user_nr'] = $_SESSION['user_nr'];
         //filter data
         return array_intersect_key($data, $this->eventDbTableColumns);
     }
@@ -63,10 +64,11 @@ class EventsHandler extends AbstractExtJSHandler
     public function handleCreateRequest($request)
     {
         $db = $this->db;
-        unset($request->data['text_nr']);
+        unset($request->data['text_nr'], $request->data['event_nr']);
 
         //insert text data
         $db->insert('am_text', array_intersect_key($request->data, $this->textDbTableColumns));
+        $request->data['text_nr'] = $db->lastInsertId('am_text');
 
         //create events part
         parent::handleCreateRequest($request);
@@ -85,7 +87,7 @@ class EventsHandler extends AbstractExtJSHandler
     {
         //delete texts part
         $id = $request->data[$this->getConfiguredIdColumn()];
-        $n  = $this->db->delete('am_text', ['text_nr = (SELECT text_nr FROM am_event WHERE event_nr = ?)' => $id]);
+        $n  = $this->db->update('am_text', ['deleted' => 1], ['text_nr = (SELECT text_nr FROM am_event WHERE event_nr = ?)' => $id]);
         if ($n == 0) {
             $this->returnFailed("No records were deleted. Record with id " . $id . " in am_event not found.");
         } else {
@@ -96,7 +98,7 @@ class EventsHandler extends AbstractExtJSHandler
 
     protected function createReadFrom($select)
     {
-        $select->from(['e' => 'am_event'])->join(['t' => 'am_text'], 'e.text_nr = t.text_nr');
+        $select->from(['e' => 'am_event'])->join(['t' => 'am_text'], 'e.text_nr = t.text_nr')->where('e.deleted = ?', 0);
     }
 }
 
