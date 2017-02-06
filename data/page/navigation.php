@@ -17,9 +17,9 @@
             <li id="navigation-galerie" class="<?= $activePage === 'galerie' ? 'active' : 'inactive' ?>">
                 <a title="Galerie" href="galerie"><span>Galerie</span></a>
             </li>
-            <!-- <li id="navigation-sommerfest" class="<?= $activePage === 'sommerfest' ? 'active' : 'inactive' ?>">
+             <li id="navigation-sommerfest" class="<?= $activePage === 'sommerfest' ? 'active' : 'inactive' ?>">
                 <a title="Sommerfest" href="sommerfest"><span>Sommerfest</span></a>
-            </li> -->
+            </li>
         </ul>
     </div>
 </div>
