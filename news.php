@@ -7,15 +7,8 @@ $activePage = 'news';
 <head>
     <?php include('data/page/header.php'); ?>
     <script type="text/javascript" src="js/news.js"></script>
+    <style type="text/css">@import url("css/news.css");</style>
     <title>Pfadi Gösgen :: NEWS</title>
-    <style>
-        #short_news {
-            position: absolute;
-            top: 200px;
-            left: 500px;
-            border-spacing: 40px;
-        }
-    </style>
 </head>
 <body class="nihilo">
 <?php include('data/page/logo.php'); ?>
