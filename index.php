@@ -90,6 +90,17 @@ $activePage = 'index';
         <div class="content_abstand"><br/></div>
     </div>
 </div>
-<?php include('data/page/footer.php') ?>
+<?php
+$pageConfig = (new Zend_Config_Ini('../config.ini', 'page'))->toArray();
+if ($pageConfig['important']['enabled'] === 1) { ?>
+    <div id="important-news-window">
+        <div id="important-news-window-content">
+            <div id="loaded-news-content">
+                <?php include('data/page/important.phtml'); ?>
+            </div>
+        </div>
+    </div>
+<?php }
+include('data/page/footer.php'); ?>
 </body>
 </html>

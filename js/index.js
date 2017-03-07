@@ -33,16 +33,13 @@ $(function() {
             if (datalength > 0) {
                 //erste news detailierter ausgeben
                 element.append(apollomin.toHtml([
-                    '<li class="pointer"> ',
-
-                    '    <div class="datum">',
+                    '<li class="pointer">',
+                    '<div class="datum">',
 
                     function(data) {
-                        return '      <p>' + apollomin.formatDate(data['evt_create']) + '</p>';
+                        return '<p>' + apollomin.formatDate(data['evt_create']) + '</p>';
                     },
-
-                    '    </div>',
-
+                    '</div>',
                     '<div class="anschlag"><a href="news.php"><h2>data[title]</h2></a><p class="teaser">data[teaser]</p></div></li>'
                 ], [
                     data[0]
@@ -61,4 +58,20 @@ $(function() {
         }
 
     });
+    // Get the modal
+    var modal = $('#important-news-window');
+    modal.css('display', 'block');
+
+    // When the user clicks on <span> (x), close the modal
+    $('#close-important-news-window').click(function() {
+        console.info('close');
+        modal.css('display', 'none');
+    });
+
+    // When the user clicks anywhere outside of the modal, close it
+    $(window).click(function(event) {
+        if (event.target !== modal) {
+            modal.css('display', 'none');
+        }
+    })
 });

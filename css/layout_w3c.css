@@ -24,15 +24,15 @@
 
 /* @group Allgemein */
 html, body, div, p, h1, h2, h3, ul, ol, span, a, table, td, form, img, li {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     font: normal 11px/1.6em "Lucida Grande", Lucida, Verdana, sans-serif;
     text-decoration: none;
 }
 
 body { /*TODO rst font-size: 100.01%; */
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
 }
 
 p {
@@ -45,7 +45,7 @@ p {
 #mitte {
     margin-left: auto;
     margin-right: auto;
-    padding: 0px;
+    padding: 0;
     text-align: left;
     position: relative;
     width: 730px;
@@ -193,7 +193,7 @@ ul.navigation li a span {
 }
 
 #logo a:hover {
-    border: 0px;
+    border: 0;
     text-decoration: none;
     color: transparent;
     background-color: transparent;
@@ -339,7 +339,7 @@ h5 {
 
 /* @group Bilder */
 img {
-    border: 0px
+    border: 0
 }
 
 .pointer {
@@ -463,10 +463,10 @@ hr {
     font: bold 14px Museo, "Helvetica Neue", Arial, Helvetica, Geneva,
     sans-serif;
     /*schatten */
-    box-shadow: 0px 5px 5px #cbcbcb;
-    -moz-box-shadow: 0px 5px 5px #cbcbcb;
-    -khtml-box-shadow: 0px 5px 5px #cbcbcb;
-    -webkit-box-shadow: 0px 5px 5px #cbcbcb;
+    box-shadow: 0 5px 5px #cbcbcb;
+    -moz-box-shadow: 0 5px 5px #cbcbcb;
+    -khtml-box-shadow: 0 5px 5px #cbcbcb;
+    -webkit-box-shadow: 0 5px 5px #cbcbcb;
     border: 1px solid white;
 }
 

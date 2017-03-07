@@ -17,3 +17,29 @@
     border-spacing: 1rem;
     border-collapse: separate;
 }
+
+#important-news-window {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+/* Modal Content/Box */
+#important-news-window-content {
+    position: fixed;
+    width: 60%;
+    left: 20%;
+    top: 20%;
+    padding: 20px;
+    border: 1px solid #888;
+    background: url('../upload/bilder/angry-birds-bg.jpg') no-repeat left top;
+    background-size: cover;
+}
+
+#loaded-news-content {
+    background-color: rgba(0, 119, 98, 0.9);
+    padding: 10px;
+}
