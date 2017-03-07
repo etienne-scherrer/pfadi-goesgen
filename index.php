@@ -1,4 +1,6 @@
 <?php
+require_once('Zend/Config.php');
+require_once('Zend/Config/Ini.php');
 include('data/page/definitions.php');
 $activePage = 'index';
 ?>
@@ -92,7 +94,7 @@ $activePage = 'index';
 </div>
 <?php
 $pageConfig = (new Zend_Config_Ini('./data/config.ini', 'page'))->toArray();
-if ($pageConfig['important']['enabled'] === 1) { ?>
+if ((int)$pageConfig['important']['enabled'] === 1) { ?>
     <div id="important-news-window">
         <div id="important-news-window-content">
             <div id="loaded-news-content">
