@@ -91,7 +91,7 @@ $activePage = 'index';
     </div>
 </div>
 <?php
-$pageConfig = (new Zend_Config_Ini('../config.ini', 'page'))->toArray();
+$pageConfig = (new Zend_Config_Ini('./data/config.ini', 'page'))->toArray();
 if ($pageConfig['important']['enabled'] === 1) { ?>
     <div id="important-news-window">
         <div id="important-news-window-content">
