@@ -32,10 +32,10 @@
     position: fixed;
     width: 60%;
     left: 20%;
-    top: 20%;
+    top: 10%;
     padding: 20px;
     border: 1px solid #888;
-    background: url('../bilder/layout/angry-birds-bg.jpg') no-repeat left top;
+    background: url('../bilder/layout/angry-birds-bg.jpg') no-repeat center top;
     background-size: cover;
 }
 
