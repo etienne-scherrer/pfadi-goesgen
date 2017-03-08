@@ -58,20 +58,22 @@ $(function() {
         }
 
     });
-    // Get the modal
-    var modal = $('#important-news-window');
-    modal.css('display', 'block');
+    if ($(window).width() > 580) {
+        // Get the modal
+        var modal = $('#important-news-window');
+        modal.css('display', 'block');
 
-    // When the user clicks on <span> (x), close the modal
-    $('#close-important-news-window').click(function() {
-        console.info('close');
-        modal.css('display', 'none');
-    });
-
-    // When the user clicks anywhere outside of the modal, close it
-    $(window).click(function(event) {
-        if (event.target !== modal) {
+        // When the user clicks on <span> (x), close the modal
+        $('#close-important-news-window').click(function() {
+            console.info('close');
             modal.css('display', 'none');
-        }
-    })
+        });
+
+        // When the user clicks anywhere outside of the modal, close it
+        $(window).click(function(event) {
+            if (event.target !== modal) {
+                modal.css('display', 'none');
+            }
+        })
+    }
 });

@@ -3,11 +3,15 @@ require_once('Zend/Config.php');
 require_once('Zend/Config/Ini.php');
 include('data/page/definitions.php');
 $activePage = 'index';
+$pageConfig = (new Zend_Config_Ini('./data/config.ini', 'page'))->toArray();
 ?>
 <!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" manifest="cache.appcache" lang="de">
 <head>
     <?php include('data/page/header.php'); ?>
+    <script type="text/javascript">
+        $('#important-news-window-content').css({"background": "url(bilder/layout/<?php echo $pageConfig['important']['background'] ?>) no-repeat fixed left top / cover"});
+    </script>
     <script type="text/javascript" src="js/index.js"></script>
     <style type="text/css">@import url("css/index.css");</style>
     <title>Pfadi Gösgen</title>
@@ -92,9 +96,7 @@ $activePage = 'index';
         <div class="content_abstand"><br/></div>
     </div>
 </div>
-<?php
-$pageConfig = (new Zend_Config_Ini('./data/config.ini', 'page'))->toArray();
-if ((int)$pageConfig['important']['enabled'] === 1) { ?>
+<?php if ((int)$pageConfig['important']['enabled'] === 1) { ?>
     <div id="important-news-window">
         <div id="important-news-window-content">
             <div id="loaded-news-content">
