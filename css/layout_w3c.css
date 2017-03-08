@@ -18,7 +18,7 @@
 *	---------------------------------------------------
 *	
 *	
-*	¬© 2009 ApolloGraphic, Oliver Steiner
+*	¬© 2017 ApolloGraphic, Oliver Steiner
 *	
 */
 
@@ -61,6 +61,7 @@ p {
     bottom: 0;
     border-top: 3px solid #830262;
     z-index: 40;
+    left: 0;
 }
 
 #fuss div {
@@ -176,11 +177,10 @@ ul.navigation li a span {
 }
 
 #content ul li ul li {
-    list-style-type: square;
     font: normal 0.9em/1.5em "Lucida Grande", Lucida, Verdana, sans-serif;
     color: #000;
     padding-left: 20px;
-    list-style-position: inside;
+    list-style: square inside;
 }
 
 #logo {
@@ -347,8 +347,7 @@ img {
 }
 
 li.pdf {
-    list-style-image: url(../bilder/symbole/pdf.gif) !important;
-    list-style-position: inside !important;
+    list-style: inside url(../bilder/symbole/pdf.gif) !important;
 }
 
 address {
@@ -571,4 +570,11 @@ div.buttons span {
 .anschlag div.text {
     padding-bottom: 10px;
     font-size: 11px;
+}
+
+@media only screen and (max-width: 960px) {
+    #logo {
+        left: 20px;
+        top: 20px;
+    }
 }
