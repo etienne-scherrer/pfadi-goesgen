@@ -20,6 +20,9 @@ $pageConfig = (new Zend_Config_Ini('./data/config.ini', 'page'))->toArray();
 <?php include('data/page/logo.php'); ?>
 <div id="mitte">
     <?php include('data/page/navigation.php'); ?>
+    <div id="banner-news">
+        <div id="banner-news-content"><?php include('data/page/banner.phtml') ?></div>
+    </div>
     <div id="short_news">
         <table>
             <tr>

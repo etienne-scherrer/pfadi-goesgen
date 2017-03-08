@@ -27,7 +27,6 @@
     top: 0;
 }
 
-/* Modal Content/Box */
 #important-news-window-content {
     position: fixed;
     width: 70%;
@@ -41,4 +40,26 @@
 #loaded-news-content {
     background-color: rgba(0, 119, 98, 0.9);
     padding: 10px;
+}
+
+#banner-news {
+    position: absolute;
+    left: 3%;
+    top: 50px;
+    width: 100%;
+    height: 150px;
+    background: url('../bilder/layout/angry-birds-bg.jpg') no-repeat center top;
+    background-size: cover;
+}
+
+#banner-news-content {
+    background-color: rgba(0, 119, 98, 0.8);
+    padding: 10px;
+    height: 88%;
+    color: #ffffff;
+}
+
+#banner-news-content tr,
+#banner-news-content td {
+    width: 25%;
 }
