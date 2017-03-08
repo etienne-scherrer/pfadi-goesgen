@@ -185,8 +185,8 @@ ul.navigation li a span {
 
 #logo {
     position: absolute;
-    left: 50px;
-    top: 50px;
+    left: 20px;
+    top: 20px;
     display: block;
     z-index: 10;
     margin-bottom: 40px;
@@ -570,11 +570,4 @@ div.buttons span {
 .anschlag div.text {
     padding-bottom: 10px;
     font-size: 11px;
-}
-
-@media only screen and (max-width: 960px) {
-    #logo {
-        left: 20px;
-        top: 20px;
-    }
 }
