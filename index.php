@@ -101,7 +101,9 @@ $config = (new Zend_Config_Ini('data/config.ini'))->toArray();
 </div>
 <?php if ((int)$config['page']['important']['enabled'] === 1) { ?>
     <script type="text/javascript">
-        $('#important-news-window-content').css({"background": "url(bilder/layout/<?php echo $config['page']['important']['background'] ?>) no-repeat fixed left top / cover"});
+        $(document).ready(function() {
+            $('#important-news-window-content').css({"background": "url(bilder/layout/<?php echo $config['page']['important']['background'] ?>) no-repeat fixed center center / cover"});
+        });
     </script>
     <div id="important-news-window">
         <div id="important-news-window-content">
