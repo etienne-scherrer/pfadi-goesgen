@@ -3,7 +3,4 @@ data/config.ini
 upload
 .user.ini
 lib/phplibs/Zend
-.idea/copyright/
-.idea/dictionaries/
-.idea/markdown-navigator/
-.idea/workspace.xml
+.idea

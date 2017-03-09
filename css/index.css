@@ -48,7 +48,7 @@
     top: 50px;
     width: 100%;
     height: 150px;
-    background: url('../bilder/layout/angry-birds-bg.jpg') no-repeat center top;
+    background: url('../bilder/layout/angry-birds-bg.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -71,7 +71,7 @@
         top: 50px;
         width: 85%;
         height: 150px;
-        background: url('../bilder/layout/angry-birds-bg.jpg') no-repeat center top;
+        background: url('../bilder/layout/angry-birds-bg.jpg') no-repeat center center;
         background-size: cover;
     }
 

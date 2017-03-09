@@ -3,15 +3,12 @@ require_once('Zend/Config.php');
 require_once('Zend/Config/Ini.php');
 include('data/page/definitions.php');
 $activePage = 'index';
-$pageConfig = (new Zend_Config_Ini('./data/config.ini', 'page'))->toArray();
+$config = (new Zend_Config_Ini('data/config.ini'))->toArray();
 ?>
 <!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" manifest="cache.appcache" lang="de">
 <head>
     <?php include('data/page/header.php'); ?>
-    <script type="text/javascript">
-        $('#important-news-window-content').css({"background": "url(bilder/layout/<?php echo $pageConfig['important']['background'] ?>) no-repeat fixed left top / cover"});
-    </script>
     <script type="text/javascript" src="js/index.js"></script>
     <style type="text/css">@import url("css/index.css");</style>
     <title>Pfadi Gösgen</title>
@@ -19,10 +16,13 @@ $pageConfig = (new Zend_Config_Ini('./data/config.ini', 'page'))->toArray();
 <body class="nihilo">
 <?php include('data/page/logo.php'); ?>
 <div id="mitte">
-    <?php include('data/page/navigation.php'); ?>
-    <div id="banner-news">
-        <div id="banner-news-content"><?php include('data/page/banner.phtml') ?></div>
-    </div>
+    <?php include('data/page/navigation.php');
+    $bannerContent = file_get_contents('data/page/banner.phtml');
+    if (!empty($bannerContent)) { ?>
+        <div id="banner-news">
+            <div id="banner-news-content"><?php echo $bannerContent ?></div>
+        </div>
+    <?php } ?>
     <div id="short_news">
         <table>
             <tr>
@@ -99,7 +99,10 @@ $pageConfig = (new Zend_Config_Ini('./data/config.ini', 'page'))->toArray();
         <div class="content_abstand"><br/></div>
     </div>
 </div>
-<?php if ((int)$pageConfig['important']['enabled'] === 1) { ?>
+<?php if ((int)$config['page']['important']['enabled'] === 1) { ?>
+    <script type="text/javascript">
+        $('#important-news-window-content').css({"background": "url(bilder/layout/<?php echo $config['page']['important']['background'] ?>) no-repeat fixed left top / cover"});
+    </script>
     <div id="important-news-window">
         <div id="important-news-window-content">
             <div id="loaded-news-content">
