@@ -66,7 +66,7 @@ abstract class AbstractExtJSHandler extends AbstractHandler
         unset($data[$idName]);
         //insert data
         $newId = $db->insert($tableName, $data);
-        $this->returnSuccess($this->getRecord($newId), "Record created");
+        $this->returnSuccess($this->getRecord($newId), 'Record created');
     }
 
     public function handleUpdateRequest($request, $amount = 0)
@@ -77,9 +77,9 @@ abstract class AbstractExtJSHandler extends AbstractHandler
         $id        = $data[$idName];
         $amount    = $amount + $this->db->update($tableName, $data, [$idName . ' = ?' => $id]);
         if ($amount === 0) {
-            $this->returnFailed("No records were updated. Record with id " . $id . " in " . $tableName . " not found.");
+            $this->returnFailed('No records were updated. Record with id ' . $id . ' in ' . $tableName . ' not found.');
         } else {
-            $this->returnSuccess($this->getRecord($id), $amount . " records updated");
+            $this->returnSuccess($this->getRecord($id), $amount . ' records updated');
         }
     }
 
@@ -171,6 +171,10 @@ abstract class AbstractExtJSHandler extends AbstractHandler
         }
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function getRecord($id)
     {
         $select = $this->db->select();
