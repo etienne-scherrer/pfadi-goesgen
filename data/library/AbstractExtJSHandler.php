@@ -65,8 +65,8 @@ abstract class AbstractExtJSHandler extends AbstractHandler
         //create new id and set it
         unset($data[$idName]);
         //insert data
-        $newId = $db->insert($tableName, $data);
-        $this->returnSuccess($this->getRecord($newId), 'Record created');
+        $db->insert($tableName, $data);
+        $this->returnSuccess($this->getRecord($db->lastInsertId($tableName)), 'Record created');
     }
 
     public function handleUpdateRequest($request, $amount = 0)
