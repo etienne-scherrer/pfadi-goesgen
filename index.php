@@ -17,7 +17,7 @@ $config = (new Zend_Config_Ini('data/config.ini'))->toArray();
 <?php include('data/page/logo.php'); ?>
 <div id="mitte">
     <?php include('data/page/navigation.php');
-    $bannerContent = file_get_contents('data/page/banner.phtml');
+    $bannerContent = preg_replace('/<!--.*?-->/s', '', file_get_contents('data/page/banner.phtml'));
     if (!empty($bannerContent)) { ?>
         <div id="banner-news">
             <div id="banner-news-content"><?php echo $bannerContent ?></div>
