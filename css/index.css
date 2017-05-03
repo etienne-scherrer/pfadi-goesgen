@@ -46,20 +46,19 @@
     top: 50px;
     width: 100%;
     height: 150px;
-    background: url('../bilder/layout/angry-birds-bg.jpg') no-repeat center center;
-    background-size: cover;
+    background: #FFFFFF url('../bilder/layout/JTS_Banner_v2.png') no-repeat center center;
+    background-size: contain;
 }
 
 #banner-news-content {
-    background-color: rgba(0, 119, 98, 0.8);
+    /*background-color: rgba(0, 119, 98, 0.8);*/
     padding: 10px;
     height: 88%;
     color: #ffffff;
 }
 
-#banner-news-content tr,
-#banner-news-content td {
-    width: 25%;
+#banner-news-content h1{
+    color: #ffffff;
 }
 
 @media only screen and (max-width: 960px) {
@@ -69,8 +68,8 @@
         top: 50px;
         width: 85%;
         height: 150px;
-        background: url('../bilder/layout/angry-birds-bg.jpg') no-repeat center center;
-        background-size: cover;
+        background: url('../bilder/layout/JTS_Banner_v2.png') no-repeat center center;
+        background-size: contain;
     }
 
     #short_news {
