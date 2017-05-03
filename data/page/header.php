@@ -28,3 +28,4 @@
     @import url("css/mobile.css");
     @import url("css/print.css") print, embossed;
 </style>
+<?php include_once("analytics.php") ?>
