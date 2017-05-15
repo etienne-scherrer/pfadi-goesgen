@@ -1,7 +1,7 @@
 apollomin.local = {
-    downloadTemplate: [
-        function (data) {
-            return '<td><h2 class="download_file">' + data['title'] + '</h2><a href=' + data['href'] +'>Download</a></td>'
+    downloadTemplate : [
+        function(data) {
+            return '<td><h2 class="download_file">' + data['title'] + '</h2><a href=' + data['href'] + '>Download</a></td>'
         }
     ],
     loadDownloadFiles: function() {

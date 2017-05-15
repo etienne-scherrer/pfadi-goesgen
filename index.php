@@ -3,7 +3,7 @@ require_once('Zend/Config.php');
 require_once('Zend/Config/Ini.php');
 include('data/page/definitions.php');
 $activePage = 'index';
-$config = (new Zend_Config_Ini('data/config.ini'))->toArray();
+$config     = (new Zend_Config_Ini('data/config.ini'))->toArray();
 ?>
 <!DOCTYPE html SYSTEM "about:legacy-compat">
 <html xmlns="http://www.w3.org/1999/xhtml" manifest="cache.appcache" lang="de">

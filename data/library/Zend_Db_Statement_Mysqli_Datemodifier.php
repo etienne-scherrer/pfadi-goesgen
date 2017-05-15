@@ -9,30 +9,33 @@ require_once('Zend/Date.php');
  * protected vars in Zend_Db_Statement_Mysqli
  * @author rst
  */
-class Zend_Db_Statement_Mysqli_Datemodifier extends Zend_Db_Statement_Mysqli {
+class Zend_Db_Statement_Mysqli_Datemodifier extends Zend_Db_Statement_Mysqli
+{
   private $originalstmt;
   private $dateColumns;
 
-  public function __construct($stmt, $dateColumns) {
+  public function __construct($stmt, $dateColumns)
+  {
     $this->originalstmt = $stmt;
 
-    if(!empty($dateColumns) && is_array($dateColumns)){
+    if (!empty($dateColumns) && is_array($dateColumns)) {
       $this->dateColumns = $dateColumns;
-    }
-    else {
-      $this->dateColumns = array();
+    } else {
+      $this->dateColumns = [];
     }
   }
 
-  function fetchAllWithDateModified() {
-    $data = array();
+  function fetchAllWithDateModified()
+  {
+    $data = [];
     while ($row = $this->fetchWithDateModified()) {
       $data[] = $row;
     }
     return $data;
   }
 
-  function fetchWithDateModified() {
+  function fetchWithDateModified()
+  {
     if (!$this->originalstmt->_stmt) {
       return false;
     }
@@ -46,19 +49,19 @@ class Zend_Db_Statement_Mysqli_Datemodifier extends Zend_Db_Statement_Mysqli {
       default:
         // fallthrough
     }
-    $row = array();
+    $row = [];
     foreach ($this->originalstmt->_values as $index => $val) {
       $key = $this->originalstmt->_keys[$index];
-      if(array_key_exists($key, $this->dateColumns) && $val){
+      if (array_key_exists($key, $this->dateColumns) && $val) {
         //reformat date:
-        $date = new Zend_Date($val, Zend_Date::ISO_8601);
+        $date      = new Zend_Date($val, Zend_Date::ISO_8601);
         $row[$key] = $date->get(Zend_Date::ISO_8601);
-      }
-      else {
+      } else {
         $row[$key] = $val;
       }
     }
     return $row;
   }
 }
+
 ?>

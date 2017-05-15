@@ -7,6 +7,6 @@ apollomin.local = {
 /* ---------------------------------------- */
 // initialize
 /* ---------------------------------------- */
-$(function () {
+$(function() {
     apollomin.loadText(110, $('#content > div > ul'), apollomin.local.sommerfestTemplate);
 });

@@ -5,7 +5,7 @@ var apollomin = {
      * @param date a string representing a date
      * @returns A timestring in the format 'hh:mm', e.g. '19:32'
      */
-    formatTime: function (date) {
+    formatTime: function(date) {
         if (!date) {
             return '';
         }
@@ -13,7 +13,7 @@ var apollomin = {
         return apollomin.padTime(d.getHours()) + ':' + apollomin.padTime(d.getMinutes());
     },
 
-    padTime: function (i) {
+    padTime: function(i) {
         var result = i.toString();
         if (result.length < 2) {
             result = '0' + result;
@@ -21,7 +21,7 @@ var apollomin = {
         return result;
     },
 
-    dayNames: [
+    dayNames  : [
         'Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'
     ],
     monthNames: [
@@ -32,7 +32,7 @@ var apollomin = {
      * @param date a string representing a date
      * @returns A datestring in the format 'Day &nbsp; dd. Month YYYY', e.g. 'Samstag &nbsp; 28. Januar 2012'
      */
-    formatDate: function (date) {
+    formatDate: function(date) {
         if (!date) {
             return '';
         }
@@ -40,11 +40,11 @@ var apollomin = {
         return apollomin.dayNames[d.getDay()] + ' &nbsp; ' + d.getDate() + '. ' + apollomin.monthNames[d.getMonth()] + ' ' + d.getFullYear();
     },
 
-    getThumbnailPath: function (fullImagePath) {
+    getThumbnailPath: function(fullImagePath) {
         return fullImagePath.substr(0, fullImagePath.lastIndexOf("/") + 1) + 'thumb/' + fullImagePath.substr(fullImagePath.lastIndexOf("/") + 1);
     },
 
-    getImageDiv: function (data) {
+    getImageDiv: function(data) {
         var imagePath = data['image_path'];
         if (imagePath && imagePath != '') {
             return '<div class="news_foto"><a class="fancybox" href="' + imagePath + '"><img src="' + apollomin.getThumbnailPath(imagePath) + '" class="news_bild"/></a></div>';
@@ -54,19 +54,19 @@ var apollomin = {
 
     sampleData: [
         {
-            event_nr: 123,
-            text_nr: 122,
-            start_location: 'Feuerwehrmagazin',
-            end_location: 'Pfadiheim',
-            evt_start: new Date().toISOString(),
-            evt_end: new Date().toISOString(),
-            user_nr: 100,
-            type_uid: 104,
-            title: 'Ferien',
-            teaser: 'Wir wünschen Euch tolle Sportferien im Schnee oder zuhause! :-) kommt unfallfrei zurück!',
-            text: 'Die Lagerdaten sind nun definitv für das SoLa!! Es wird in der ersten Sommerferienwoche stattfinden.',
+            event_nr       : 123,
+            text_nr        : 122,
+            start_location : 'Feuerwehrmagazin',
+            end_location   : 'Pfadiheim',
+            evt_start      : new Date().toISOString(),
+            evt_end        : new Date().toISOString(),
+            user_nr        : 100,
+            type_uid       : 104,
+            title          : 'Ferien',
+            teaser         : 'Wir wünschen Euch tolle Sportferien im Schnee oder zuhause! :-) kommt unfallfrei zurück!',
+            text           : 'Die Lagerdaten sind nun definitv für das SoLa!! Es wird in der ersten Sommerferienwoche stattfinden.',
             additional_text: 'Z Vieri, Z Trinke',
-            evt_create: new Date().toISOString()
+            evt_create     : new Date().toISOString()
         }
     ],
 
@@ -74,7 +74,7 @@ var apollomin = {
         '<ul>',
         '  <li class="pointer">',
         '    <div class="datum">',
-        function (data) {
+        function(data) {
             return '      <p>' + apollomin.formatDate(data['evt_start']) + '</p>';
         },
         '    </div>',
@@ -86,14 +86,14 @@ var apollomin = {
         '        <tr class="antreten">',
         '          <th>Sammlung:</th>',
         '          <td>data[start_location]</td>',
-        function (data) {
+        function(data) {
             return '          <td>' + apollomin.formatTime(data['evt_start']) + '</td>';
         },
         '        </tr>',
         '        <tr class="besammeln">',
         '          <th>Abtreten:</th>',
         '          <td>data[end_location]</td>',
-        function (data) {
+        function(data) {
             return '          <td>' + apollomin.formatTime(data['evt_end']) + '</td>';
         },
         '        </tr>',
@@ -113,16 +113,16 @@ var apollomin = {
      * @param typeUid e.g. 104 fuer die Woelfe und 105 fuer die Pfader
      * @param divId e.g. '#woelfe'
      */
-    loadAnschlag: function (typeUid, divId) {
+    loadAnschlag: function(typeUid, divId) {
         var div = $(divId).empty();
 
         $.ajax({
-            url: "data/page/events.php",
-            data: {
+            url     : "data/page/events.php",
+            data    : {
                 'typeUid': typeUid
             },
             dataType: "json"
-        }).done(function (response) {
+        }).done(function(response) {
             if (!response['success']) {
                 console.error("Failed to get next event.", response['message']);
             }
@@ -131,7 +131,7 @@ var apollomin = {
                 //init fancybox for images
                 $('.fancybox').fancybox();
             }
-        }).fail(function (jqXHR, statusText, error) {
+        }).fail(function(jqXHR, statusText, error) {
             console.error("Failed to get next event: " + statusText, jqXHR);
         });
     },
@@ -140,9 +140,9 @@ var apollomin = {
      * @param typeUid e.g. 102 fuer news und 103 fuer portrait
      * @param element a jquery element
      */
-    loadText: function (typeUid, element, htmlTemplate) {
+    loadText: function(typeUid, element, htmlTemplate) {
         element = element.empty();
-        apollomin.loadTextHandler(typeUid, function (data) {
+        apollomin.loadTextHandler(typeUid, function(data) {
             element.append(apollomin.toHtml(htmlTemplate, data));
             //init fancybox for images
             $('.fancybox').fancybox();
@@ -153,32 +153,32 @@ var apollomin = {
      * @param typeUid e.g. 102 fuer news und 103 fuer portrait
      * @param element a jquery element
      */
-    loadTextHandler: function (typeUid, handler) {
+    loadTextHandler: function(typeUid, handler) {
         $.ajax({
-            url: "data/page/texts.php",
-            data: {
+            url     : "data/page/texts.php",
+            data    : {
                 'typeUid': typeUid
             },
             dataType: "json"
-        }).done(function (response) {
+        }).done(function(response) {
             if (!response['success']) {
                 console.error("Failed to get text.", response['message']);
             }
             else {
                 handler(response['data']);
             }
-        }).fail(function (jqXHR, statusText, error) {
+        }).fail(function(jqXHR, statusText, error) {
             console.error("Failed to get text: " + statusText, jqXHR);
         });
     },
 
-    toHtml: function (template, data) {
+    toHtml: function(template, data) {
         var result = '';
         if (!data || data.lenght == 0) {
             return result;
         }
         var datalength = data.length;
-        var length = template.length;
+        var length     = template.length;
         var item, index, key;
         for (var i = 0; i < datalength; i++) {
             for (var j = 0; j < length; j++) {
@@ -189,8 +189,8 @@ var apollomin = {
                 else {
                     while (item.indexOf('data[') >= 0) {
                         index = item.indexOf('data[');
-                        key = item.substr(index + 5, item.indexOf(']', index) - index - 5);
-                        item = item.replace('data[' + key + ']', data[i][key]);
+                        key   = item.substr(index + 5, item.indexOf(']', index) - index - 5);
+                        item  = item.replace('data[' + key + ']', data[i][key]);
                     }
                     result = result + item + '\n';
                 }
@@ -203,25 +203,25 @@ var apollomin = {
 /* ---------------------------------------- */
 //initialize (run on each site)
 /* ---------------------------------------- */
-$(function () {
+$(function() {
     //set random background
     var numRand = Math.floor(Math.random() * 15) + 1;
     $('body').css({
         "background": "url(bilder/background/bg-" + numRand + ".jpg) no-repeat fixed left top / cover",
-        "min-width": '100%'
+        "min-width" : '100%'
     });
 });
 
 //appcache: if there was an update, refresh page (without confirm)
 if (window.applicationCache) {
-    window.applicationCache.addEventListener('updateready', function () {
+    window.applicationCache.addEventListener('updateready', function() {
         if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
             window.applicationCache.swapCache();
             console.log("appcache updated");
             window.location.reload();
         }
     }, false);
-    window.applicationCache.addEventListener('error', function (msg) {
+    window.applicationCache.addEventListener('error', function(msg) {
         console.log("appcache error " + msg);
     }, false);
 }

@@ -2,137 +2,139 @@
 
 /* Formatting am.view.TextListView  TODO rst images/post.gif ersetzen*/
 .title {
-  padding: 2px 0 0 20px;
-  background: transparent url(images/post.gif) no-repeat;
+    padding: 2px 0 0 20px;
+    background: transparent url(images/post.gif) no-repeat;
 }
 
 .x-rtl .title {
-  padding: 2px 20px 0 0;
-  background: transparent url(images/post.gif) no-repeat top right;
+    padding: 2px 20px 0 0;
+    background: transparent url(images/post.gif) no-repeat top right;
 }
 
 .title b {
-  font-family: tahoma, verdana;
-  display: block;
-  color: #333;
+    font-family: tahoma, verdana;
+    display: block;
+    color: #333;
 }
 
 .author {
-  color: #333
+    color: #333
 }
 
 .text-grid .x-grid-rowbody {
-  margin: 5px 20px 10px 25px !important;
-  color: #555;
-  font-size: 11px;
+    margin: 5px 20px 10px 25px !important;
+    color: #555;
+    font-size: 11px;
 }
 
 .text-grid .x-rtl .x-grid-rowbody {
-  margin: 5px 25px 10px 20px !important;
+    margin: 5px 25px 10px 20px !important;
 }
 
 /* filebrowser icons */
 .filebrowser-icon-unknown-file {
-  background-image: url('../icons/16/page_white.png');
+    background-image: url('../icons/16/page_white.png');
 }
 
 .filebrowser-icon-text-file {
-  background-image: url('../icons/16/page_white_text.png');
+    background-image: url('../icons/16/page_white_text.png');
 }
 
 .filebrowser-icon-audio-file {
-  background-image: url('../icons/16/music.png');
+    background-image: url('../icons/16/music.png');
 }
 
 .filebrowser-icon-video-file {
-  background-image: url('../icons/16/film.png');
+    background-image: url('../icons/16/film.png');
 }
 
 .filebrowser-icon-image-file {
-  background-image: url('../icons/16/image.png');
+    background-image: url('../icons/16/image.png');
 }
 
 .filebrowser-icon-vector-file {
-  background-image: url('../icons/16/page_white_vector.png');
+    background-image: url('../icons/16/page_white_vector.png');
 }
 
 .filebrowser-icon-flash-file {
-  background-image: url('../icons/16/page_white_flash.png');
+    background-image: url('../icons/16/page_white_flash.png');
 }
 
 .filebrowser-icon-document-file {
-  background-image: url('../icons/16/page_white_word.png');
+    background-image: url('../icons/16/page_white_word.png');
 }
 
 .filebrowser-icon-spreadsheet-file {
-  background-image: url('../icons/16/page_white_excel.png');
+    background-image: url('../icons/16/page_white_excel.png');
 }
 
 .filebrowser-icon-presentation-file {
-  background-image: url('../icons/16/page_white_powerpoint.png');
+    background-image: url('../icons/16/page_white_powerpoint.png');
 }
 
 .filebrowser-icon-acrobat-file {
-  background-image: url('../icons/16/page_white_acrobat.png');
+    background-image: url('../icons/16/page_white_acrobat.png');
 }
 
 .filebrowser-icon-archive-file {
-  background-image: url('../icons/16/page_white_compressed.png');
+    background-image: url('../icons/16/page_white_compressed.png');
 }
 
 /*
  * uploader extension icons
  */
 .ux-mu-status-value {
-  float: right;
-  min-width: 16px;
-  height: 16px;
-  background-repeat: no-repeat;
-  margin: 0 3px 0 2px;
-  cursor: pointer;
-  overflow: hidden;
+    float: right;
+    min-width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    margin: 0 3px 0 2px;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .icon-help {
-  background-image: url(../icons/16/help.png) !important;
+    background-image: url(../icons/16/help.png) !important;
 }
 
 .ux-mu-icon-action-ok {
-  background-image: url(../icons/16/tick.png) !important;
+    background-image: url(../icons/16/tick.png) !important;
 }
 
 .ux-mu-icon-action-upload {
-  background-image: url(../icons/16/arrow_up.png) !important;
+    background-image: url(../icons/16/arrow_up.png) !important;
 }
 
 .ux-mu-icon-action-abort {
-  background-image: url(../icons/16/cancel.png) !important;
+    background-image: url(../icons/16/cancel.png) !important;
 }
 
-.ux-mu-icon-action-remove { /*
-  background-image: url(../icons/16/delete.png) !important;
-  */
-  
+.ux-mu-icon-action-remove {
+    /*
+     background-image: url(../icons/16/delete.png) !important;
+     */
+
 }
 
 .ux-mu-icon-action-browse {
-  background-image: url(../icons/16/folder.png) !important;
+    background-image: url(../icons/16/folder.png) !important;
 }
 
-.ux-mu-icon-upload-ready { /*
-  background-image: url(../icons/16/ready.png) !important;
-  */
-  
+.ux-mu-icon-upload-ready {
+    /*
+     background-image: url(../icons/16/ready.png) !important;
+     */
+
 }
 
 .ux-mu-icon-upload-uploading {
-  background-image: url(../icons/16/loading.gif) !important;
+    background-image: url(../icons/16/loading.gif) !important;
 }
 
 .ux-mu-icon-upload-uploaded {
-  background-image: url(../icons/16/accept.png) !important;
+    background-image: url(../icons/16/accept.png) !important;
 }
 
 .ux-mu-icon-upload-uploaderror {
-  background-image: url(../icons/16/exclamation.png) !important;
+    background-image: url(../icons/16/exclamation.png) !important;
 }

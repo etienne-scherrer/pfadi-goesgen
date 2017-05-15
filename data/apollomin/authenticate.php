@@ -4,7 +4,7 @@ require_once('../library/AbstractHandler.php');
 
 class AuthenticationHandler extends AbstractHandler
 {
-    
+
     function createNewSessionWithChallenge()
     {
         session_unset();

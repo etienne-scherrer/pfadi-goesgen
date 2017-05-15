@@ -81,7 +81,7 @@ class EventsHandler extends AbstractExtJSHandler
      */
     public function handleCreateRequest($request)
     {
-        $db = $this->db;
+        $db                       = $this->db;
         $request->data['user_nr'] = $_SESSION['user_nr'];
         unset($request->data['text_nr'], $request->data['event_nr']);
 
@@ -95,13 +95,13 @@ class EventsHandler extends AbstractExtJSHandler
 
     /**
      * @param Request $request
-     * @param int $n
+     * @param int     $n
      */
     public function handleUpdateRequest($request, $n = 0)
     {
         //update texts part
         $request->data['user_nr'] = $_SESSION['user_nr'];
-        $n  = $n + $this->db->update('am_text', array_intersect_key($request->data, $this->textDbTableColumns), ['text_nr = ?' => $request->data['text_nr']]);
+        $n                        = $n + $this->db->update('am_text', array_intersect_key($request->data, $this->textDbTableColumns), ['text_nr = ?' => $request->data['text_nr']]);
         //update events part
         parent::handleUpdateRequest($request, $n);
     }
