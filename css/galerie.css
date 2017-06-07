@@ -1,8 +1,5 @@
 @CHARSET "UTF-8";
 
-/* galerie benoetig fancybox thumbs */
-@import url("jquery.fancybox-thumbs.css");
-
 #content {
     position: relative;
     padding-left: 20px;

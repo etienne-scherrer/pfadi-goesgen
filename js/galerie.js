@@ -3,8 +3,8 @@ apollomin.local = {
     galerienTemplate: [
         '<td><h2 class="galerie_name">data[name]</h2><div class="vorschau_bild">', function(data) {
             var imagePath = data['head_img'];
-            if (imagePath && imagePath != '') {
-                return '<a class="galerie" data-path="' + data['path'] + '" href="' + imagePath + '"><img src="' + apollomin.getThumbnailPath(imagePath) + '"/></a>';
+            if (imagePath && imagePath !== '') {
+                return '<a class="galerie" href="' + imagePath + '" data-path="'+ data['path'] +'"><img src="' + apollomin.getThumbnailPath(imagePath) + '" alt="" /></a>';
             }
             return '';
         }, '</div><p class="anzahl_bilder">data[count] Bilder</p></td>'
@@ -20,7 +20,7 @@ apollomin.local = {
             }
             else {
                 var galerien = response['data'];
-                if (!galerien || galerien.lenght == 0) {
+                if (!galerien || galerien.lenght === 0) {
                     return;
                 }
                 var target = $('#galerien > tbody');
@@ -28,8 +28,8 @@ apollomin.local = {
                 var length    = galerien.length;
                 var trElement = null;
                 for (var i = 0; i < length; i++) {
-                    if (i % 2 == 0) {
-                        if (trElement != null) {
+                    if (i % 2 === 0) {
+                        if (trElement !== null) {
                             target.append(trElement);
                             target.append('<tr class="galerie_abstand"><td colspan="2"><hr /></td></tr>');
                         }
@@ -40,7 +40,7 @@ apollomin.local = {
                     ]);
                     trElement.append(tmp);
                 }
-                if (trElement != null) {
+                if (trElement !== null) {
                     target.append(trElement);
                 }
 
@@ -70,14 +70,10 @@ apollomin.local = {
                         nextEffect: 'none',
                         prevEffect: 'none',
                         padding   : 0,
-                        helpers   : {
-                            thumbs: {
-                                width : 150,
-                                height: 120,
-                                source: function(item) {
-                                    return apollomin.getThumbnailPath(item.href);
-                                }
-                            }
+                        afterClose: function () {
+                            window.setTimeout(function () {
+                                apollomin.setBackground()
+                            }, 50);
                         }
                     });
                 }

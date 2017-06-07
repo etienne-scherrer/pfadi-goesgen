@@ -197,6 +197,15 @@ var apollomin = {
             }
         }
         return result;
+    },
+
+    setBackground: function () {
+        //set random background
+        var numRand = Math.floor(Math.random() * 15) + 1;
+        $('body').css({
+            "background": "url(bilder/background/bg-" + numRand + ".jpg) no-repeat fixed left top / cover",
+            "min-width" : '100%'
+        });
     }
 };
 
@@ -204,18 +213,13 @@ var apollomin = {
 //initialize (run on each site)
 /* ---------------------------------------- */
 $(function() {
-    //set random background
-    var numRand = Math.floor(Math.random() * 15) + 1;
-    $('body').css({
-        "background": "url(bilder/background/bg-" + numRand + ".jpg) no-repeat fixed left top / cover",
-        "min-width" : '100%'
-    });
+   apollomin.setBackground();
 });
 
 //appcache: if there was an update, refresh page (without confirm)
 if (window.applicationCache) {
     window.applicationCache.addEventListener('updateready', function() {
-        if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+        if (window.applicationCache.status === window.applicationCache.UPDATEREADY) {
             window.applicationCache.swapCache();
             console.log("appcache updated");
             window.location.reload();

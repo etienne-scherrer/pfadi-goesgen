@@ -64,11 +64,6 @@ bilder/symbole/pdf.png
 css/apollomin-lite.css
 css/blank.gif
 css/download.css
-css/fancybox_loading.gif
-css/fancybox_loading@2x.gif
-css/fancybox_overlay.png
-css/fancybox_sprite.png
-css/fancybox_sprite@2x.png
 css/fonts/museo300-regular-webfont.eot
 css/fonts/museo300-regular-webfont.svg
 css/fonts/museo300-regular-webfont.ttf
@@ -94,8 +89,6 @@ css/images/smoothdivscroll/cursors/cursor_arrow_left.cur
 css/images/smoothdivscroll/cursors/cursor_arrow_left.png
 css/images/smoothdivscroll/cursors/cursor_arrow_right.cur
 css/images/smoothdivscroll/cursors/cursor_arrow_right.png
-css/jquery.fancybox-thumbs.css
-css/jquery.fancybox.css
 css/layout_w3c.css
 css/mobile.css
 css/museo.css
@@ -115,11 +108,10 @@ include_gen.js
 index.php
 js/apollomin.js
 js/download.js
-js/fancyBox/source/helpers/jquery.fancybox-thumbs.js
-js/fancyBox/source/jquery.fancybox.pack.js
+js/fancybox-3.0/dist/helpers/jquery.fancybox.js
+js/fancybox-3.0/dist/helpers/jquery.fancybox.css
 js/galerie.js
 js/index.js
-js/jquery-1.8.3.min.js
 js/jquery-3.1.1.min.js
 js/jquery-mousewheel-3.0.6/jquery.mousewheel.min.js
 js/jquery-smoothdivscroll/js/jquery.kinetic.js
@@ -135,4 +127,4 @@ js/sommerfest.js
 NETWORK:
 *
 
-# last modified: 15.05.2017 - 16:33
+# last modified: 08.06.2017 - 00:21

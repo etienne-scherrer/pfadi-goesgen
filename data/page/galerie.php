@@ -23,14 +23,13 @@ class GalerieHandler extends AbstractFileHandler
     protected function addFileToResult(&$files, $browsePath, $relativePath, $item, $onlyImages)
     {
         if (!$this->isModeGalerien()) {
-            $fname        = (string)$item;
-            $ext          = strtolower(pathinfo($item->getFilename(), PATHINFO_EXTENSION));
-            $hasThumbnail = $this->checkThumbnail($browsePath, $fname, $ext);
+            $fileName     = (string)$item;
+            $extension    = strtolower(pathinfo($item->getFilename(), PATHINFO_EXTENSION));
+            $hasThumbnail = $this->checkThumbnail($browsePath, $fileName, $extension);
             if (!$onlyImages || $hasThumbnail) {
-                if ($ext)
-                    $files[$fname] = [
-                        'href'  => $relativePath . $fname,
-                        'title' => ''//$fname ; Hier koennte man einen Bezeichnung fuer ein Bild setzen. Z.B. aus den Metadaten (IPCT / XMP)
+                if ($extension)
+                    $files[$fileName] = [
+                        'src'  => $relativePath . $fileName
                     ];
             }
         }
@@ -47,24 +46,24 @@ class GalerieHandler extends AbstractFileHandler
             $iterator        = new DirectoryIterator($innerBrowsePath);
             foreach ($iterator as $innerItem) {
                 if (!$this->isIgnoredFileItem($innerItem) && $innerItem->isFile()) {
-                    $innerfname   = $innerItem->getFilename();
-                    $ext          = strtolower(pathinfo($innerfname, PATHINFO_EXTENSION));
-                    $hasThumbnail = $this->checkThumbnail($innerBrowsePath, $innerfname, $ext);
+                    $innerFileName = $innerItem->getFilename();
+                    $extension     = strtolower(pathinfo($innerFileName, PATHINFO_EXTENSION));
+                    $hasThumbnail  = $this->checkThumbnail($innerBrowsePath, $innerFileName, $extension);
                     if ($hasThumbnail) {
                         $count = $count + 1;
-                        if ($headImgName == null || strcasecmp($innerfname, $headImgName) < 0) {
-                            $headImgName = $innerfname;
+                        if ($headImgName == null || strcasecmp($innerFileName, $headImgName) < 0) {
+                            $headImgName = $innerFileName;
                         }
                     }
                 }
             }
             //compute sort sting; try to find a year
-            $sortstring = $filename;
-            preg_match('/\b20[0-9]{2}\b/', $sortstring, $matches);
+            $sortString = $filename;
+            preg_match('/\b20[0-9]{2}\b/', $sortString, $matches);
             if ($matches && count($matches) > 0) {
-                $sortstring = $matches[0] . $filename;
+                $sortString = $matches[0] . $filename;
             }
-            $files[$sortstring] = [
+            $files[$sortString] = [
                 'path'     => $path,
                 'name'     => $filename,
                 'count'    => $count,

@@ -22,7 +22,7 @@
 <link rel="icon" href="bilder/favicon/pfadigoesgen_32.png"/>
 <script type="text/javascript" src="include_gen.js"></script>
 <style type="text/css">
-    @import url("css/jquery.fancybox.css");
+    @import url("js/fancybox-3.0/dist/jquery.fancybox.css");
     @import url("css/layout_w3c.css");
     @import url("css/museo.css");
     @import url("css/mobile.css");
