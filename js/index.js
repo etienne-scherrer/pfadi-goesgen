@@ -40,7 +40,7 @@ $(function() {
                         return '<p>' + apollomin.formatDate(data['evt_create']) + '</p>';
                     },
                     '</div>',
-                    '<div class="anschlag"><a href="news.php"><h2>data[title]</h2></a><p class="teaser">data[teaser]</p></div></li>'
+                    '<div class="anschlag"><a href="news"><h2>data[title]</h2></a><p class="teaser">data[teaser]</p></div></li>'
                 ], [
                     data[0]
                 ]));
@@ -49,7 +49,7 @@ $(function() {
                 for (var i = 1; i < datalength; i++) {
                     //zusaetzliche news nur titel ausgeben
                     element.append(apollomin.toHtml([
-                        '<li><a href="news.php">data[title]</a></li>'
+                        '<li><a href="news">data[title]</a></li>'
                     ], [
                         data[i]
                     ]));

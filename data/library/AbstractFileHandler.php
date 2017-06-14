@@ -26,7 +26,7 @@ class AbstractFileHandler extends AbstractHandler
 
     function supportsThumbnail($extension)
     {
-        return $extension == 'jpg' || $extension == 'gif' || $extension == 'png';
+        return in_array($extension, ['jpg', 'gif', 'png', 'jpeg']);
     }
 
     function checkThumbnail($imagepath, $fname, $extension)
@@ -44,35 +44,35 @@ class AbstractFileHandler extends AbstractHandler
     function thumbExists($imagepath, $fname)
     {
         //test if thumb dir exists
-        $thumbdir = $imagepath . self::THUMB_DIR;
-        if (!file_exists($thumbdir)) {
+        $thumbDir = $imagepath . self::THUMB_DIR;
+        if (!file_exists($thumbDir)) {
             //create dir and return false
-            mkdir($thumbdir);
+            mkdir($thumbDir);
             return false;
         } else {
-            return file_exists($thumbdir . $fname);
+            return file_exists($thumbDir . $fname);
         }
     }
 
     function purgeOldThumbs($path)
     {
-        $thumbdir = $path . self::THUMB_DIR;
-        if (!file_exists($thumbdir)) {
+        $thumbDir = $path . self::THUMB_DIR;
+        if (!file_exists($thumbDir)) {
             return;
         } else {
-            $iterator = new DirectoryIterator($thumbdir);
+            $iterator = new DirectoryIterator($thumbDir);
             foreach ($iterator as $item) {
                 if (!$this->isIgnoredFileItem($item)) {
                     if ($item->isFile()) {
-                        $fname = (string)$item;
-                        if (!file_exists($path . '/' . $fname)) {
-                            @unlink($thumbdir . $fname);
+                        $fileName = (string)$item;
+                        if (!file_exists($path . '/' . $fileName)) {
+                            @unlink($thumbDir . $fileName);
                         }
                     }
                 }
             }
-            if ($this->isEmptyDir($thumbdir)) {
-                @rmdir($thumbdir);
+            if ($this->isEmptyDir($thumbDir)) {
+                @rmdir($thumbDir);
             }
         }
     }
@@ -82,11 +82,11 @@ class AbstractFileHandler extends AbstractHandler
         return (($files = @scandir($dir)) && count($files) <= 2);
     }
 
-    function createThumb($imagepath, $fname)
+    function createThumb($imagepath, $fileName)
     {
         //get image metadata
-        $fullpath      = $imagepath . $fname;
-        $fullthumbpath = $imagepath . self::THUMB_DIR . $fname;
+        $fullpath      = $imagepath . $fileName;
+        $fullthumbpath = $imagepath . self::THUMB_DIR . $fileName;
         $size          = getimagesize($fullpath);
         $width         = $size[0];
         $height        = $size[1];
@@ -102,19 +102,19 @@ class AbstractFileHandler extends AbstractHandler
         if ($width > $newWidth && $height > $newHeight) {
             $img    = null;
             $newImg = null;
-            if ($size[2] == 1) {
+            if ($size[2] === 1) {
                 // GIF
                 $img    = imagecreatefromgif($fullpath);
                 $newImg = imagecreate($newWidth, $newHeight);
                 imagecopyresampled($newImg, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
                 imagegif($newImg, $fullthumbpath);
-            } else if ($size[2] == 2) {
+            } else if ($size[2] === 2) {
                 // JPG
                 $img    = imagecreatefromjpeg($fullpath);
                 $newImg = imagecreatetruecolor($newWidth, $newHeight);
                 imagecopyresampled($newImg, $img, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
                 imagejpeg($newImg, $fullthumbpath);
-            } else if ($size[2] == 3) {
+            } else if ($size[2] === 3) {
                 // PNG
                 $img    = imagecreatefrompng($fullpath);
                 $newImg = imagecreatetruecolor($newWidth, $newHeight);
@@ -152,6 +152,7 @@ class AbstractFileHandler extends AbstractHandler
             'flv'  => 'filebrowser-icon-video-file',
             'gif'  => 'filebrowser-icon-image-file',
             'jpg'  => 'filebrowser-icon-image-file',
+            'jpeg' => 'filebrowser-icon-image-file',
             'mov'  => 'filebrowser-icon-video-file',
             'mp3'  => 'filebrowser-icon-audio-file',
             'mpg'  => 'filebrowser-icon-video-file',
@@ -176,10 +177,10 @@ class AbstractFileHandler extends AbstractHandler
         return $result;
     }
 
-    function getImageMetadata()
+    function getImageMetadata($filename)
     {
         $picinfo = [];
-        getimagesize('lighthouse_spain.jpg', $picinfo);
+        getimagesize($filename, $picinfo);
         if (isset($picinfo['APP13'])) {
             $iptc = iptcparse($picinfo["APP13"]);
             if (is_array($iptc)) {

@@ -37,47 +37,47 @@
 }
 
 .filebrowser-icon-text-file {
-    background-image: url('../icons/16/page_white_text.png');
+    background-image: url('../icons/16/page_white_text.png') !important;
 }
 
 .filebrowser-icon-audio-file {
-    background-image: url('../icons/16/music.png');
+    background-image: url('../icons/16/music.png') !important;
 }
 
 .filebrowser-icon-video-file {
-    background-image: url('../icons/16/film.png');
+    background-image: url('../icons/16/film.png') !important;
 }
 
 .filebrowser-icon-image-file {
-    background-image: url('../icons/16/image.png');
+    background-image: url('../icons/16/image.png') !important;
 }
 
 .filebrowser-icon-vector-file {
-    background-image: url('../icons/16/page_white_vector.png');
+    background-image: url('../icons/16/page_white_vector.png') !important;
 }
 
 .filebrowser-icon-flash-file {
-    background-image: url('../icons/16/page_white_flash.png');
+    background-image: url('../icons/16/page_white_flash.png') !important;
 }
 
 .filebrowser-icon-document-file {
-    background-image: url('../icons/16/page_white_word.png');
+    background-image: url('../icons/16/page_white_word.png') !important;
 }
 
 .filebrowser-icon-spreadsheet-file {
-    background-image: url('../icons/16/page_white_excel.png');
+    background-image: url('../icons/16/page_white_excel.png') !important;
 }
 
 .filebrowser-icon-presentation-file {
-    background-image: url('../icons/16/page_white_powerpoint.png');
+    background-image: url('../icons/16/page_white_powerpoint.png') !important;
 }
 
 .filebrowser-icon-acrobat-file {
-    background-image: url('../icons/16/page_white_acrobat.png');
+    background-image: url('../icons/16/page_white_acrobat.png') !important;
 }
 
 .filebrowser-icon-archive-file {
-    background-image: url('../icons/16/page_white_compressed.png');
+    background-image: url('../icons/16/page_white_compressed.png') !important;
 }
 
 /*
