@@ -15,7 +15,7 @@ class LocalEventsHandler extends AbstractHandler
         $select = $this->db->select()
             ->from(['t' => 'am_text'])
             ->join(['e' => 'am_event'], 't.text_nr = e.text_nr')
-            ->where('t.type_uid = ?', !empty($_GET['typeUid']) ? $_GET['typeUid'] : null)
+            ->where('t.type_uid = ?', !empty($_POST['typeUid']) ? $_POST['typeUid'] : null)
             ->where('DATE_ADD(e.evt_end, INTERVAL 1 DAY) >= NOW()')
             ->where('t.deleted = ?', 0)
             ->where('e.deleted = ?', 0)

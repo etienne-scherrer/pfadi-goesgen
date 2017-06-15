@@ -14,7 +14,7 @@ class LocalTextsHandler extends AbstractHandler
     {
         $select = $this->db->select()
             ->from(['t' => 'am_text'])
-            ->where('t.type_uid = ?', !empty($_GET['typeUid']) ? $_GET['typeUid'] : null)
+            ->where('t.type_uid = ?', !empty($_POST['typeUid']) ? $_POST['typeUid'] : null)
             ->where('t.deleted = ?', 0)
             ->order('t.evt_create DESC');
         $stmt   = $select->query();
