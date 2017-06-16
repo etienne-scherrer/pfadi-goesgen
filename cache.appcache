@@ -108,8 +108,8 @@ include_gen.js
 index.php
 js/apollomin.js
 js/download.js
-js/fancybox-3.0/dist/jquery.fancybox.js
-js/fancybox-3.0/dist/jquery.fancybox.css
+js/fancybox-3.0/dist/jquery.fancybox.min.js
+js/fancybox-3.0/dist/jquery.fancybox.min.css
 js/galerie.js
 js/index.js
 js/jquery-3.1.1.min.js
@@ -127,4 +127,4 @@ js/sommerfest.js
 NETWORK:
 *
 
-# last modified: 16.06.2017 - 11:54
+# last modified: 16.06.2017 - 20:22
