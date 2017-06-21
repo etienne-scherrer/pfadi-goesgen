@@ -689,7 +689,7 @@ Ext.require(["Ext.tip.QuickTipManager", "Ext.panel.Tool", "Ext.form.Panel", "Ext
                             a.submitResponse()
                         }
                     }]
-                }], dockedItems: [{dock: "bottom", xtype: "component", html: '<p>version 2 | <a href="http://www.apollographic.ch">&copy;2017 ApolloGraphic</a></p>'}]
+                }], dockedItems: [{dock: "bottom", xtype: "component", html: '<p>version 2</p>'}]
             }]
         })
     })

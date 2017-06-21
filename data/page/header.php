@@ -3,12 +3,10 @@
 <meta name="keywords" lang="de"
       content="pfadi, pfader, wölfe, scout, heim, lager, niedergösgen, gösgen, ,schönenwerd, aarau, olten, niederamt, solothurn, schweiz, pfadiheim, höck, reservation, wald, outdoor, natur, miete, abteilung"/>
 <meta name="DC.Title" content="Pfadi Gösgen"/>
-<meta name="DC.Creator" content="ApolloGraphic : Oliver Steiner"/>
 <meta name="DC.Creator" content="Etienne Scherrer"/>
 <meta name="DC.Subject" content="Pfadiheim und Verein"/>
 <meta name="DC.Description" content="Die offizielle Webseite der Pfadi Gösgen und des Heimvereins"/>
 <meta name="DC.Publisher" content="Pfadi Goesgen"/>
-<meta name="DC.Contributor" content="AoplloGraphic"/>
 <meta name="DC.Contributor" content="Etienne Scherrer"/>
 <meta name="DC.Date" content="<?php echo date('Y-m-d') ?>"/>
 <meta name="DC.Type" content="Text"/>
@@ -16,7 +14,7 @@
 <meta name="DC.Identifier" content="http://www.pfadi-goesgen.ch/news"/>
 <meta name="DC.Language" content="de"/>
 <meta name="DC.Coverage" content="Goesgen"/>
-<meta name="DC.Rights" content="© <?php echo date('Y') ?> Website by ApolloGraphic © all rights reserved"/>
+<meta name="DC.Rights" content="© <?php echo date('Y') ?> Website by Etienne Scherrer all rights reserved"/>
 <meta id="viewport"
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>

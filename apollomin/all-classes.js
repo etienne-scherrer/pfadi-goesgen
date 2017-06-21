@@ -21031,7 +21031,7 @@ Ext.define("am.view.NavigationPanel", {
         items : [Ext.create("Ext.Component", {
             x   : 0,
             y   : 0,
-            html: '<a href="/apollomin/"><img src="resources/apollomin.jpg" alt="ApolloGraphic" /></a>'
+            html: '<a href="/apollomin/"><img src="resources/apollomin.jpg" alt="Admin" /></a>'
         })]
     }],
     initComponent  : function() {

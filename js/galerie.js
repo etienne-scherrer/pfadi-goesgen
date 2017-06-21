@@ -44,6 +44,7 @@ apollomin.local = {
                     target.append(trElement);
                 }
 
+
                 apollomin.local.installGalerieHandler();
             }
         }).fail(function(jqXHR, statusText, error) {
