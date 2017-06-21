@@ -69,12 +69,7 @@ apollomin.local = {
                     $.fancybox.open(response['data'], {
                         nextEffect: 'none',
                         prevEffect: 'none',
-                        padding   : 0,
-                        afterClose: function () {
-                            window.setTimeout(function () {
-                                apollomin.setBackground()
-                            }, 50);
-                        }
+                        padding   : 0
                     });
                 }
             }).fail(function(jqXHR, statusText, error) {

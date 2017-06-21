@@ -130,13 +130,7 @@ var apollomin = {
             else {
                 div.append(apollomin.toHtml(apollomin.anschlagHtmlTemplate, response['data']));
                 //init fancybox for images
-                $('.fancybox').fancybox({
-                    afterClose: function () {
-                        window.setTimeout(function () {
-                            apollomin.setBackground()
-                        }, 50);
-                    }
-                });
+                $('.fancybox').fancybox();
             }
         }).fail(function(jqXHR, statusText, error) {
             console.error("Failed to get next event: " + statusText, jqXHR);
@@ -152,13 +146,7 @@ var apollomin = {
         apollomin.loadTextHandler(typeUid, function(data) {
             element.append(apollomin.toHtml(htmlTemplate, data));
             //init fancybox for images
-            $('.fancybox').fancybox({
-                afterClose: function () {
-                    window.setTimeout(function () {
-                        apollomin.setBackground()
-                    }, 50);
-                }
-            });
+            $('.fancybox').fancybox();
         });
     },
 
