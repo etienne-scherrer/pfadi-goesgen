@@ -21,8 +21,8 @@
 <link rel="apple-touch-icon" href="/bilder/logos/logo_pfadi_goesgen_2010-trans.png"/>
 <link rel="icon" href="bilder/favicon/pfadigoesgen_32.png"/>
 <script type="text/javascript" src="include_gen.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <style type="text/css">
-    @import url("js/fancybox-3.0/dist/jquery.fancybox.min.css");
     @import url("css/layout_w3c.css");
     @import url("css/museo.css");
     @import url("css/mobile.css");
