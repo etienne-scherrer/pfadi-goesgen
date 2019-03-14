@@ -12,7 +12,7 @@
                 <a title="Portrait" href="portrait"><span>Portrait</span></a>
             </li>
             <li id="navigation-pfadiheim" class="<?= $activePage === 'pfadiheim' ? 'active' : 'inactive' ?>">
-                <a title="Pfadiheim" href="pfadiheim"><span>Pfadiheim</span></a>
+                <a title="Pfadiheim" href="http://pfadiheim-goesgen.ch"><span>Pfadiheim</span></a>
             </li>
             <li id="navigation-galerie" class="<?= $activePage === 'galerie' ? 'active' : 'inactive' ?>">
                 <a title="Galerie" href="galerie"><span>Galerie</span></a>

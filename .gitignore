@@ -4,3 +4,4 @@ upload
 .user.ini
 lib/phplibs/Zend
 .idea
+/.htaccess
