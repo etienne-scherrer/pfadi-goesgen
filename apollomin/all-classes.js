@@ -20720,7 +20720,7 @@ Ext.define("am.controller.TextController", {
                     var h = d.down('datetimefield[name="evt_end"]');
                     if (!h.getValue()) {
                         var g = Ext.Date.add(e, Ext.Date.HOUR, 3);
-                        g     = Ext.Date.add(g, Ext.Date.MINUTE, 30);
+                        g     = Ext.Date.add(g, Ext.Date.MINUTE, 15);
                         h.setValue(g)
                     }
                     setTimeout(function() {
